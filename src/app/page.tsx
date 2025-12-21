@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Star, Grid, Megaphone, Terminal, BarChart3, Globe, Share2, ShoppingCart } from "lucide-react";
+import { ArrowRight, Star, Grid, Megaphone, Terminal, BarChart3, Globe, Share2, ShoppingCart, Bot, Settings2, Code2, Palette, Search, Mail, Users, Link as LinkIcon } from "lucide-react";
 import React from "react";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 
@@ -9,15 +9,15 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans">
       {/* Navbar */}
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-24 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.svg"
               alt="creavoid"
-              width={140}
-              height={40}
+              width={200}
+              height={60}
               priority
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 
@@ -92,46 +92,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feature Cards - Vertical Portrait Layout (Design V2) */}
+      {/* Feature Cards - Vertical Portrait Layout (Design V2 - Narrower) */}
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 justify-items-center">
 
             {/* Card 1: Black - Web & SaaS */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-black p-10 text-white shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2 flex flex-col min-h-[520px]">
+            <div className="group relative overflow-hidden rounded-[2rem] bg-black p-10 text-white shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2 flex flex-col min-h-[500px] max-w-[340px]">
               <div className="mb-8">
                 <Star className="h-12 w-12 text-white fill-white" />
               </div>
-              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
+              <h3 className="mb-6 text-3xl font-bold font-serif leading-tight">
                 Web & SaaS<br />Development
               </h3>
-              <p className="text-gray-300 leading-relaxed text-lg font-light">
+              <p className="text-gray-300 leading-relaxed text-base font-light">
                 Build scalable web applications and SaaS platforms that grow with your business. Our full-stack development team creates robust, user-friendly solutions that drive engagement and convert visitors into customers.
               </p>
             </div>
 
             {/* Card 2: Gradient - AI Agents */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#ff6b6b] via-[#e57d8c] to-[#29a0b1] p-10 text-white shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2 flex flex-col min-h-[520px]">
+            <div className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#ff6b6b] via-[#e57d8c] to-[#29a0b1] p-10 text-white shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2 flex flex-col min-h-[500px] max-w-[340px]">
               <div className="mb-8">
                 <Grid className="h-12 w-12 text-black" />
               </div>
-              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight text-black">
+              <h3 className="mb-6 text-3xl font-bold font-serif leading-tight text-black">
                 AI Agents &<br />Automation
               </h3>
-              <p className="text-black/80 leading-relaxed text-lg font-light">
+              <p className="text-black/80 leading-relaxed text-base font-light">
                 Streamline your operations with intelligent AI agents that handle customer support, lead qualification, and routine tasks 24/7. Reduce costs by up to 60% while improving response times and customer satisfaction.
               </p>
             </div>
 
             {/* Card 3: White - Paid Advertising */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-white border border-gray-100 p-10 text-black shadow-lg transition-all hover:shadow-xl hover:-translate-y-2 flex flex-col min-h-[520px]">
+            <div className="group relative overflow-hidden rounded-[2rem] bg-white border border-gray-100 p-10 text-black shadow-lg transition-all hover:shadow-xl hover:-translate-y-2 flex flex-col min-h-[500px] max-w-[340px]">
               <div className="mb-8">
                 <Megaphone className="h-12 w-12 text-black" />
               </div>
-              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
+              <h3 className="mb-6 text-3xl font-bold font-serif leading-tight">
                 Paid<br />Advertising
               </h3>
-              <p className="text-gray-600 leading-relaxed text-lg font-light">
+              <p className="text-gray-600 leading-relaxed text-base font-light">
                 Generate qualified leads and maximize ROI with data-driven advertising campaigns across Google, Facebook, and LinkedIn. Our performance marketing experts deliver measurable results with transparent reporting.
               </p>
             </div>
@@ -140,45 +140,87 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Detailed Services Grid */}
+      {/* Detailed Services Grid (Full 10 Items) */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4">Comprehensive Solutions.</h2>
-            <p className="text-muted-foreground text-lg">Everything you need to grow your digital presence.</p>
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4">Online Marketing & AI Agency</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
-            <ServiceItem
-              icon={<Terminal />}
-              title="Process Automation"
-              description="Streamline repetitive tasks with custom scripts and n8n workflows."
-            />
-            <ServiceItem
-              icon={<Megaphone />}
-              title="Paid Advertising"
-              description="Targeted campaigns that convert clicks into loyal customers."
-            />
-            <ServiceItem
-              icon={<Globe />}
-              title="SaaS Development"
-              description="End-to-end product development from MVP to IPO."
-            />
-            <ServiceItem
-              icon={<Share2 />}
-              title="Social Media Marketing"
-              description="Organic growth strategies to build a community around your brand."
-            />
-            <ServiceItem
-              icon={<BarChart3 />}
-              title="Analytics & Tracking"
-              description="Deep insights into user behavior to optimize conversion rates."
-            />
-            <ServiceItem
-              icon={<Star />}
-              title="Web Design"
-              description="Award-winning aesthetics that build trust and authority."
-            />
+          <div className="grid md:grid-cols-2 gap-16">
+            {/* Column 1: AI & Dev Services */}
+            <div>
+              <h3 className="text-2xl font-bold font-serif mb-8 border-b pb-4">Our AI & Dev Services</h3>
+              <div className="space-y-12">
+                <ServiceItem
+                  icon={<Bot />}
+                  title="AI Agents"
+                  description="Deploy intelligent chatbots and virtual assistants that provide instant customer support, qualify leads, and handle routine inquiries. Available 24/7 with human-like conversation capabilities."
+                  iconColor="text-primary"
+                />
+                <ServiceItem
+                  icon={<Settings2 />}
+                  title="Process Automation"
+                  description="Eliminate repetitive tasks and reduce human error with custom automation workflows. From email marketing sequences to inventory management, we automate processes that save time and money."
+                  iconColor="text-primary"
+                />
+                <ServiceItem
+                  icon={<Grid />}
+                  title="SaaS Development"
+                  description="From MVP to scalable SaaS platforms — we support your product journey with tailored development solutions. Our agile approach ensures flexibility, user-focus, and reliable performance as your business grows."
+                  iconColor="text-primary"
+                />
+                <ServiceItem
+                  icon={<Code2 />}
+                  title="Web Development"
+                  description="Custom websites and web applications built with modern technologies. We focus on fast loading times, mobile responsiveness, and conversion optimization to ensure your digital presence drives real business results."
+                  iconColor="text-primary"
+                />
+                <ServiceItem
+                  icon={<Palette />}
+                  title="Web Design"
+                  description="User-centered design that combines aesthetics with functionality. Our designs are crafted to guide visitors through your customer journey, increasing engagement and conversion rates."
+                  iconColor="text-primary"
+                />
+              </div>
+            </div>
+
+            {/* Column 2: Digital Marketing Services */}
+            <div>
+              <h3 className="text-2xl font-bold font-serif mb-8 border-b pb-4">Our Digital Marketing Services</h3>
+              <div className="space-y-12">
+                <ServiceItem
+                  icon={<Search />}
+                  title="SEO"
+                  description="Dominate search results with our proven SEO strategies. We've helped clients achieve first-page rankings for competitive keywords, resulting in 300%+ increases in organic traffic and qualified leads."
+                  iconColor="text-primary"
+                />
+                <ServiceItem
+                  icon={<Megaphone />}
+                  title="Paid Advertising"
+                  description="Performance-focused advertising campaigns that deliver measurable ROI. From Google Ads to social media advertising, we optimize every dollar spent to maximize your return on investment."
+                  iconColor="text-primary"
+                />
+                <ServiceItem
+                  icon={<Users />}
+                  title="Social Media Marketing (SMM)"
+                  description="Build brand awareness and engage your audience across all major social platforms. Our content strategies drive meaningful interactions that convert followers into customers."
+                  iconColor="text-primary"
+                />
+                <ServiceItem
+                  icon={<LinkIcon />}
+                  title="Affiliate Marketing"
+                  description="Expand your reach through strategic affiliate partnerships. We help you build and manage affiliate programs that drive sales while maintaining brand integrity."
+                  iconColor="text-primary"
+                />
+                <ServiceItem
+                  icon={<BarChart3 />}
+                  title="Analytics & Tracking"
+                  description="Track, measure, and optimize your digital performance. We implement smart tracking tools and custom dashboards to help you make data-driven decisions that boost ROI and customer engagement."
+                  iconColor="text-primary"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -225,15 +267,15 @@ export default function Home() {
   );
 }
 
-function ServiceItem({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function ServiceItem({ icon, title, description, iconColor = "text-primary" }: { icon: React.ReactNode; title: string; description: string; iconColor?: string }) {
   return (
     <div className="flex gap-4 items-start group">
-      <div className="shrink-0 p-3 bg-white border border-gray-200 rounded-xl shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-        {React.cloneElement(icon as React.ReactElement<{ className?: string }>, { className: "w-6 h-6" })}
+      <div className={`shrink-0 p-0`}>
+        {React.cloneElement(icon as React.ReactElement<{ className?: string }>, { className: `w-8 h-8 ${iconColor}` })}
       </div>
       <div>
-        <h3 className="text-xl font-bold font-serif mb-1">{title}</h3>
-        <p className="text-muted-foreground leading-relaxed">{description}</p>
+        <h3 className="text-xl font-bold font-serif mb-2">{title}</h3>
+        <p className="text-muted-foreground leading-relaxed text-sm">{description}</p>
       </div>
     </div>
   );
