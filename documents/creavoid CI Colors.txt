@@ -1,0 +1,6 @@
+CI - Farbwerte - creavoid
+
+Primary: #29A0B1
+Secondary: #FF6B6B
+
+Text Black: #000000
