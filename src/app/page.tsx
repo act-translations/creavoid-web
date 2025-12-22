@@ -1,13 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Star, Grid, Megaphone, Terminal, BarChart3, Globe, Share2, ShoppingCart, Bot, Settings2, Code2, Palette, Search, Mail, Users, Link as LinkIcon, Brain } from "lucide-react";
+import { ArrowRight, Star, Grid, Megaphone, CheckCircle2, ShoppingCart, Bot, Settings2, Code2, Palette, Search, Mail, Users, Link as LinkIcon, Brain } from "lucide-react";
 import React from "react";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 import { ServiceItem } from "@/components/ServiceItem";
+import { ServiceTabs } from "@/components/ServiceTabs";
+import { HeroAnimation } from "@/components/HeroAnimation";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-sans selection:bg-primary/30 selection:text-primary-foreground">
       {/* Navbar */}
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-24 flex items-center justify-between">
@@ -45,193 +50,144 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col justify-center py-20 md:py-32 bg-background">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-serif leading-tight">
-              Transformieren Sie Ihr Business mit <span className="text-primary">intelligenten</span> Lösungen.
+      <section className="relative flex-1 flex flex-col justify-center py-20 md:py-40 bg-background overflow-hidden">
+        {/* Background Decorative Gradients */}
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Next-Gen Business Solutions
+            </div>
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight font-serif leading-[1.1] text-foreground">
+              Level up your business with <span className="text-primary italic">AI-driven</span> technology.
             </h1>
-            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Wir entwickeln maßgeschneiderte Webanwendungen, setzen autonome KI-Agenten ein und verwalten hochperformante Werbekampagnen, um Ihren Umsatz zu skalieren.
+            <p className="text-xl text-muted-foreground max-w-xl leading-relaxed">
+              Wir transformieren Unternehmen durch maßgeschneiderte Software, intelligente KI-Agenten und Performance-Marketing auf höchstem Niveau.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full text-base font-semibold transition-colors h-12 px-8 bg-accent text-white hover:bg-accent/90 shadow-md"
+                className="inline-flex items-center justify-center rounded-full text-lg font-bold transition-all h-16 px-10 bg-accent text-white hover:bg-accent/90 hover:scale-105 shadow-xl shadow-accent/20"
               >
-                Kontaktieren Sie uns
+                Let's talk business
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full text-base font-medium transition-colors h-12 px-8 border border-input bg-background hover:bg-secondary hover:text-accent-foreground"
+                className="inline-flex items-center justify-center rounded-full text-lg font-medium transition-all h-16 px-10 border-2 border-border bg-transparent hover:bg-secondary hover:border-secondary"
               >
-                Services ansehen
+                Our Services
               </Link>
             </div>
+            <div className="flex items-center gap-6 pt-4 text-sm text-muted-foreground/60 font-medium">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-primary" /> 100% Custom
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-primary" /> AI-Native
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-primary" /> Result-Driven
+              </div>
+            </div>
           </div>
 
-          {/* Abstract Hero Visual/Grid */}
-          <div className="relative hidden md:block h-[400px] w-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl overflow-hidden border border-border/50 shadow-inner">
-            <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-20">
-              {Array.from({ length: 36 }).map((_, i) => (
-                <div key={i} className="border-r border-b border-gray-400"></div>
-              ))}
-            </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/50">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                <div className="w-3 h-3 rounded-full bg-green-400"></div>
-              </div>
-              <div className="space-y-2 w-64">
-                <div className="h-2 bg-gray-200 rounded w-3/4"></div>
-                <div className="h-2 bg-gray-200 rounded w-1/2"></div>
-                <div className="h-2 bg-gray-200 rounded w-full"></div>
-              </div>
-            </div>
+          <div className="relative">
+            <HeroAnimation />
           </div>
         </div>
       </section>
 
-      {/* Feature Cards */}
-      <section className="py-16 bg-white/50">
+      {/* Feature Cards with Realistic Shadows */}
+      <section className="py-24 bg-white/50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 justify-items-center">
+          <div className="grid lg:grid-cols-3 gap-10 justify-items-center">
 
             {/* Card 1: Black - Web & SaaS */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-black p-10 text-white shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2 flex flex-col min-h-[500px] max-w-[340px]">
-              <div className="mb-8">
-                <Star className="h-12 w-12 text-white fill-white" />
+            <motion.div
+              className="relative overflow-hidden rounded-[2.5rem] bg-[#000000] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] transition-shadow duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.45)]"
+              whileHover={{ y: -12, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div className="mb-10 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
+                <Star className="h-8 w-8 text-white fill-white" />
               </div>
-              <h3 className="mb-6 text-3xl font-bold font-serif leading-tight">
-                Web & SaaS<br />Entwicklung
+              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
+                Web & SaaS<br />Development
               </h3>
-              <p className="text-gray-300 leading-relaxed text-base font-light">
-                Bauen Sie skalierbare Webanwendungen und SaaS-Plattformen, die mit Ihrem Unternehmen wachsen. Unser Full-Stack-Team entwickelt robuste Lösungen, die Ihre Kunden begeistern.
+              <p className="text-gray-400 leading-relaxed text-lg font-light">
+                Build scalable web applications and SaaS platforms that grow with your business. Our full-stack development team creates robust, user-friendly solutions that drive engagement.
               </p>
-            </div>
+              <div className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
+                Learn More <ArrowRight className="w-5 h-5" />
+              </div>
+            </motion.div>
 
             {/* Card 2: Gradient - AI Agents */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#ff6b6b] via-[#e57d8c] to-[#29a0b1] p-10 text-white shadow-xl transition-all hover:shadow-2xl hover:-translate-y-2 flex flex-col min-h-[500px] max-w-[340px]">
-              <div className="mb-8">
-                <Grid className="h-12 w-12 text-black" />
+            <motion.div
+              className="relative overflow-hidden rounded-[2.5rem] p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] transition-shadow duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.45)]"
+              style={{
+                background: 'linear-gradient(300deg, #29A0B1 25%, #FF6B6B 100%)'
+              }}
+              whileHover={{ y: -12, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div className="mb-10 w-16 h-16 rounded-2xl bg-[#000000]/10 flex items-center justify-center">
+                <Grid className="h-8 w-8 text-[#000000]" />
               </div>
-              <h3 className="mb-6 text-3xl font-bold font-serif leading-tight text-black">
-                KI Agenten &<br />Automatisierung
+              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
+                AI Agents &<br />Automation
               </h3>
-              <p className="text-black/80 leading-relaxed text-base font-light">
-                Optimieren Sie Ihre Abläufe mit intelligenten KI-Agenten, die Kundensupport, Lead-Qualifizierung und Routineaufgaben rund um die Uhr übernehmen. Sparen Sie Zeit und Kosten.
+              <p className="text-[#000000]/80 leading-relaxed text-lg font-light">
+                Streamline your operations with intelligent AI agents that handle customer support, lead qualification, and routine tasks 24/7. Reduce costs by up to 60%.
               </p>
-            </div>
+              <div className="mt-auto pt-8 flex items-center gap-2 text-[#000000] font-bold group-hover:gap-4 transition-all">
+                Learn More <ArrowRight className="w-5 h-5" />
+              </div>
+            </motion.div>
 
             {/* Card 3: White - Paid Advertising */}
-            <div className="group relative overflow-hidden rounded-[2rem] bg-white border border-gray-100 p-10 text-black shadow-lg transition-all hover:shadow-xl hover:-translate-y-2 flex flex-col min-h-[500px] max-w-[340px]">
-              <div className="mb-8">
-                <Megaphone className="h-12 w-12 text-black" />
+            <motion.div
+              className="relative overflow-hidden rounded-[2.5rem] bg-white p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] transition-shadow duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.45)]"
+              whileHover={{ y: -12, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div className="mb-10 w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center">
+                <Megaphone className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="mb-6 text-3xl font-bold font-serif leading-tight">
+              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
                 Paid<br />Advertising
               </h3>
-              <p className="text-gray-600 leading-relaxed text-base font-light">
-                Generieren Sie qualifizierte Leads und maximieren Sie Ihren ROI mit datengesteuerten Werbekampagnen auf Google, Facebook und LinkedIn. Messbare Ergebnisse durch Expertenhand.
+              <p className="text-muted-foreground leading-relaxed text-lg font-light">
+                Generate qualified leads and maximize ROI with data-driven advertising campaigns across Google, Facebook, and LinkedIn. Performance marketing experts.
               </p>
-            </div>
+              <div className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
+                Learn More <ArrowRight className="w-5 h-5" />
+              </div>
+            </motion.div>
 
           </div>
         </div>
       </section>
 
-      {/* Detailed Services Grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4">Online Marketing & KI Agentur</h2>
+      {/* Detailed Services Section */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/[0.02] rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold font-serif mb-6 tracking-tight">Our Expertise</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Explore our comprehensive suite of digital services, from AI-driven automation to world-class software development.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16">
-            {/* Column 1: AI & Dev Services */}
-            <div>
-              <h3 className="text-2xl font-bold font-serif mb-8 border-b pb-4">KI & Development Services</h3>
-              <div className="space-y-12">
-                <ServiceItem
-                  iconName="Bot"
-                  title="KI Agenten"
-                  description="Nutzen Sie intelligente Assistenten für Kundensupport und Lead-Generierung — rund um die Uhr verfügbar."
-                  iconColor="text-primary"
-                />
-                <ServiceItem
-                  iconName="Settings2"
-                  title="Prozess-Automatisierung"
-                  description="Automatisieren Sie Workflows und sparen Sie wertvolle Ressourcen durch effiziente digitale Prozesse."
-                  iconColor="text-primary"
-                />
-                <ServiceItem
-                  iconName="Cloud"
-                  title="SaaS & Cloud Lösungen"
-                  description="Wir begleiten Sie vom MVP bis zur skalierbaren Cloud-Plattform mit Fokus auf Performance."
-                  iconColor="text-primary"
-                />
-                <ServiceItem
-                  iconName="Code2"
-                  title="Web Entwicklung"
-                  description="Maßgeschneiderte Webanwendungen mit modernen Technologien wie Next.js und Headless CMS."
-                  iconColor="text-primary"
-                />
-                <ServiceItem
-                  iconName="Palette"
-                  title="UI/UX Design"
-                  description="Nutzerzentriertes Design, das Ästhetik mit Funktionalität verbindet und Konversionen steigert."
-                  iconColor="text-primary"
-                />
-              </div>
-            </div>
-
-            {/* Column 2: Digital Marketing Services */}
-            <div>
-              <h3 className="text-2xl font-bold font-serif mb-8 border-b pb-4">Digital Marketing Services</h3>
-              <div className="space-y-12">
-                <ServiceItem
-                  iconName="Search"
-                  title="SEO"
-                  description="Sichtbarkeit bei Google erhöhen durch technisches SEO und hochwertiges Content-Marketing."
-                  iconColor="text-primary"
-                />
-                <ServiceItem
-                  iconName="Megaphone"
-                  title="Google & Meta Ads"
-                  description="Performance-Marketing, das messbare Resultate liefert und Ihren Umsatz nachhaltig steigert."
-                  iconColor="text-primary"
-                />
-                <ServiceItem
-                  iconName="Users"
-                  title="Social Media Marketing"
-                  description="Markenaufbau und Interaktion auf den Kanälen, die für Ihre Zielgruppe wirklich zählen."
-                  iconColor="text-primary"
-                />
-                <ServiceItem
-                  iconName="LinkIcon"
-                  title="Affiliate Marketing"
-                  description="Erschließen Sie neue Absatzwege durch strategisches Partnermanagement und Affiliate-Netzwerke."
-                  iconColor="text-primary"
-                />
-                <ServiceItem
-                  iconName="BarChart3"
-                  title="Analytics & Tracking"
-                  description="Datenbasierte Entscheidungen durch präzises Tracking und übersichtliche Dashboards."
-                  iconColor="text-primary"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-20 text-center">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-lg font-semibold text-primary hover:gap-4 transition-all"
-            >
-              Alle 19 Services entdecken <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
+          <ServiceTabs />
         </div>
       </section>
 

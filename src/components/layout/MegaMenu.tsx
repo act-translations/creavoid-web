@@ -60,7 +60,7 @@ export function MegaMenu() {
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
                             <li className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
-                                <Megaphone className="w-5 h-5 text-accent" />
+                                <Megaphone className="w-5 h-5 text-primary" />
                                 <span className="font-bold text-lg font-serif">Growth Marketing</span>
                             </li>
                             <ListItem title="SEO" href="/services/seo">
@@ -91,7 +91,7 @@ export function MegaMenu() {
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
-                                <Code2 className="w-5 h-5 text-black" />
+                                <Code2 className="w-5 h-5 text-primary" />
                                 <span className="font-bold text-lg font-serif">Engineering</span>
                             </li>
                             <ListItem title="Web Development" href="/services/web-development">
@@ -113,7 +113,7 @@ export function MegaMenu() {
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
-                                <Lightbulb className="w-5 h-5 text-yellow-500" />
+                                <Lightbulb className="w-5 h-5 text-primary" />
                                 <span className="font-bold text-lg font-serif">Strategy</span>
                             </li>
                             <ListItem title="Digital Strategy" href="/services/digital-strategy">
@@ -132,7 +132,7 @@ export function MegaMenu() {
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
-                                <BarChart className="w-5 h-5 text-green-600" />
+                                <BarChart className="w-5 h-5 text-primary" />
                                 <span className="font-bold text-lg font-serif">Data & Insights</span>
                             </li>
                             <ListItem title="Web Analytics" href="/services/web-analytics">
@@ -154,14 +154,15 @@ export function MegaMenu() {
 }
 
 const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a"> & { title: string }
->(({ className, title, children, ...props }, ref) => {
+    React.ElementRef<typeof Link>,
+    React.ComponentPropsWithoutRef<typeof Link> & { title: string }
+>(({ className, title, children, href, ...props }, ref) => {
     return (
         <li>
             <NavigationMenuLink asChild>
-                <a
+                <Link
                     ref={ref}
+                    href={href}
                     className={cn(
                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary group",
                         className
@@ -175,7 +176,7 @@ const ListItem = React.forwardRef<
                     <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
                         {children}
                     </p>
-                </a>
+                </Link>
             </NavigationMenuLink>
         </li>
     );

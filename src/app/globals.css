@@ -33,40 +33,47 @@
 /* Creavoid Brand Theme - Light Mode */
 :root {
   /* Site Background: Light Gray/White */
-  --background: #f4f4f4;
-  --foreground: #111827;
-  /* Near Black */
+  --background: #f8fafc;
+  --foreground: #000000;
+  /* Official CI Black */
 
   /* White Cards */
   --card: #ffffff;
-  --card-foreground: #111827;
+  --card-foreground: #000000;
 
   /* Primary: Creavoid Teal (Official) */
   --primary: #29a0b1;
   --primary-foreground: #ffffff;
 
   /* Secondary: Light Gray for generic secondary elements */
-  --secondary: #e5e7eb;
-  --secondary-foreground: #111827;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #000000;
 
   /* Accent: Creavoid Coral (Official) */
   --accent: #ff6b6b;
   --accent-foreground: #ffffff;
 
   /* Muted Text */
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
 
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-
-  --border: #e5e7eb;
-  --input: #e5e7eb;
+  /* Border & UI Elements */
+  --border: #e2e8f0;
+  --input: #e2e8f0;
   --ring: #29a0b1;
 
-  --radius: 0.75rem;
-  /* Rounded nicely */
+  --radius: 1rem;
+  /* Slightly more rounded for modern feel */
 }
+
+/* Glassmorphism Utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 
 body {
   background-color: var(--background);
