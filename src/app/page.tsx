@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Star, Grid, Megaphone, Terminal, BarChart3, Globe, Share2, ShoppingCart, Bot, Settings2, Code2, Palette, Search, Mail, Users, Link as LinkIcon } from "lucide-react";
+import { ArrowRight, Star, Grid, Megaphone, Terminal, BarChart3, Globe, Share2, ShoppingCart, Bot, Settings2, Code2, Palette, Search, Mail, Users, Link as LinkIcon, Brain } from "lucide-react";
 import React from "react";
 import { MegaMenu } from "@/components/layout/MegaMenu";
+import { ServiceItem } from "@/components/ServiceItem";
 
 export default function Home() {
   return (
@@ -48,23 +49,23 @@ export default function Home() {
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-serif leading-tight">
-              Transform Your Business with <span className="text-primary">Intelligent</span> Solutions.
+              Transformieren Sie Ihr Business mit <span className="text-primary">intelligenten</span> Lösungen.
             </h1>
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              We build custom web applications, deploy autonomous AI agents, and manage high-performance paid advertising campaigns to scale your revenue.
+              Wir entwickeln maßgeschneiderte Webanwendungen, setzen autonome KI-Agenten ein und verwalten hochperformante Werbekampagnen, um Ihren Umsatz zu skalieren.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full text-base font-semibold transition-colors h-12 px-8 bg-accent text-white hover:bg-accent/90 shadow-md"
               >
-                Contact Us
+                Kontaktieren Sie uns
               </Link>
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center rounded-full text-base font-medium transition-colors h-12 px-8 border border-input bg-background hover:bg-secondary hover:text-accent-foreground"
               >
-                View Services
+                Services ansehen
               </Link>
             </div>
           </div>
@@ -92,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feature Cards - Vertical Portrait Layout (Design V2 - Narrower) */}
+      {/* Feature Cards */}
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 justify-items-center">
@@ -103,10 +104,10 @@ export default function Home() {
                 <Star className="h-12 w-12 text-white fill-white" />
               </div>
               <h3 className="mb-6 text-3xl font-bold font-serif leading-tight">
-                Web & SaaS<br />Development
+                Web & SaaS<br />Entwicklung
               </h3>
               <p className="text-gray-300 leading-relaxed text-base font-light">
-                Build scalable web applications and SaaS platforms that grow with your business. Our full-stack development team creates robust, user-friendly solutions that drive engagement and convert visitors into customers.
+                Bauen Sie skalierbare Webanwendungen und SaaS-Plattformen, die mit Ihrem Unternehmen wachsen. Unser Full-Stack-Team entwickelt robuste Lösungen, die Ihre Kunden begeistern.
               </p>
             </div>
 
@@ -116,10 +117,10 @@ export default function Home() {
                 <Grid className="h-12 w-12 text-black" />
               </div>
               <h3 className="mb-6 text-3xl font-bold font-serif leading-tight text-black">
-                AI Agents &<br />Automation
+                KI Agenten &<br />Automatisierung
               </h3>
               <p className="text-black/80 leading-relaxed text-base font-light">
-                Streamline your operations with intelligent AI agents that handle customer support, lead qualification, and routine tasks 24/7. Reduce costs by up to 60% while improving response times and customer satisfaction.
+                Optimieren Sie Ihre Abläufe mit intelligenten KI-Agenten, die Kundensupport, Lead-Qualifizierung und Routineaufgaben rund um die Uhr übernehmen. Sparen Sie Zeit und Kosten.
               </p>
             </div>
 
@@ -132,7 +133,7 @@ export default function Home() {
                 Paid<br />Advertising
               </h3>
               <p className="text-gray-600 leading-relaxed text-base font-light">
-                Generate qualified leads and maximize ROI with data-driven advertising campaigns across Google, Facebook, and LinkedIn. Our performance marketing experts deliver measurable results with transparent reporting.
+                Generieren Sie qualifizierte Leads und maximieren Sie Ihren ROI mit datengesteuerten Werbekampagnen auf Google, Facebook und LinkedIn. Messbare Ergebnisse durch Expertenhand.
               </p>
             </div>
 
@@ -140,46 +141,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Detailed Services Grid (Full 10 Items) */}
+      {/* Detailed Services Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4">Online Marketing & AI Agency</h2>
+            <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4">Online Marketing & KI Agentur</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16">
             {/* Column 1: AI & Dev Services */}
             <div>
-              <h3 className="text-2xl font-bold font-serif mb-8 border-b pb-4">Our AI & Dev Services</h3>
+              <h3 className="text-2xl font-bold font-serif mb-8 border-b pb-4">KI & Development Services</h3>
               <div className="space-y-12">
                 <ServiceItem
-                  icon={<Bot />}
-                  title="AI Agents"
-                  description="Deploy intelligent chatbots and virtual assistants that provide instant customer support, qualify leads, and handle routine inquiries. Available 24/7 with human-like conversation capabilities."
+                  iconName="Bot"
+                  title="KI Agenten"
+                  description="Nutzen Sie intelligente Assistenten für Kundensupport und Lead-Generierung — rund um die Uhr verfügbar."
                   iconColor="text-primary"
                 />
                 <ServiceItem
-                  icon={<Settings2 />}
-                  title="Process Automation"
-                  description="Eliminate repetitive tasks and reduce human error with custom automation workflows. From email marketing sequences to inventory management, we automate processes that save time and money."
+                  iconName="Settings2"
+                  title="Prozess-Automatisierung"
+                  description="Automatisieren Sie Workflows und sparen Sie wertvolle Ressourcen durch effiziente digitale Prozesse."
                   iconColor="text-primary"
                 />
                 <ServiceItem
-                  icon={<Grid />}
-                  title="SaaS Development"
-                  description="From MVP to scalable SaaS platforms — we support your product journey with tailored development solutions. Our agile approach ensures flexibility, user-focus, and reliable performance as your business grows."
+                  iconName="Cloud"
+                  title="SaaS & Cloud Lösungen"
+                  description="Wir begleiten Sie vom MVP bis zur skalierbaren Cloud-Plattform mit Fokus auf Performance."
                   iconColor="text-primary"
                 />
                 <ServiceItem
-                  icon={<Code2 />}
-                  title="Web Development"
-                  description="Custom websites and web applications built with modern technologies. We focus on fast loading times, mobile responsiveness, and conversion optimization to ensure your digital presence drives real business results."
+                  iconName="Code2"
+                  title="Web Entwicklung"
+                  description="Maßgeschneiderte Webanwendungen mit modernen Technologien wie Next.js und Headless CMS."
                   iconColor="text-primary"
                 />
                 <ServiceItem
-                  icon={<Palette />}
-                  title="Web Design"
-                  description="User-centered design that combines aesthetics with functionality. Our designs are crafted to guide visitors through your customer journey, increasing engagement and conversion rates."
+                  iconName="Palette"
+                  title="UI/UX Design"
+                  description="Nutzerzentriertes Design, das Ästhetik mit Funktionalität verbindet und Konversionen steigert."
                   iconColor="text-primary"
                 />
               </div>
@@ -187,40 +188,49 @@ export default function Home() {
 
             {/* Column 2: Digital Marketing Services */}
             <div>
-              <h3 className="text-2xl font-bold font-serif mb-8 border-b pb-4">Our Digital Marketing Services</h3>
+              <h3 className="text-2xl font-bold font-serif mb-8 border-b pb-4">Digital Marketing Services</h3>
               <div className="space-y-12">
                 <ServiceItem
-                  icon={<Search />}
+                  iconName="Search"
                   title="SEO"
-                  description="Dominate search results with our proven SEO strategies. We've helped clients achieve first-page rankings for competitive keywords, resulting in 300%+ increases in organic traffic and qualified leads."
+                  description="Sichtbarkeit bei Google erhöhen durch technisches SEO und hochwertiges Content-Marketing."
                   iconColor="text-primary"
                 />
                 <ServiceItem
-                  icon={<Megaphone />}
-                  title="Paid Advertising"
-                  description="Performance-focused advertising campaigns that deliver measurable ROI. From Google Ads to social media advertising, we optimize every dollar spent to maximize your return on investment."
+                  iconName="Megaphone"
+                  title="Google & Meta Ads"
+                  description="Performance-Marketing, das messbare Resultate liefert und Ihren Umsatz nachhaltig steigert."
                   iconColor="text-primary"
                 />
                 <ServiceItem
-                  icon={<Users />}
-                  title="Social Media Marketing (SMM)"
-                  description="Build brand awareness and engage your audience across all major social platforms. Our content strategies drive meaningful interactions that convert followers into customers."
+                  iconName="Users"
+                  title="Social Media Marketing"
+                  description="Markenaufbau und Interaktion auf den Kanälen, die für Ihre Zielgruppe wirklich zählen."
                   iconColor="text-primary"
                 />
                 <ServiceItem
-                  icon={<LinkIcon />}
+                  iconName="LinkIcon"
                   title="Affiliate Marketing"
-                  description="Expand your reach through strategic affiliate partnerships. We help you build and manage affiliate programs that drive sales while maintaining brand integrity."
+                  description="Erschließen Sie neue Absatzwege durch strategisches Partnermanagement und Affiliate-Netzwerke."
                   iconColor="text-primary"
                 />
                 <ServiceItem
-                  icon={<BarChart3 />}
+                  iconName="BarChart3"
                   title="Analytics & Tracking"
-                  description="Track, measure, and optimize your digital performance. We implement smart tracking tools and custom dashboards to help you make data-driven decisions that boost ROI and customer engagement."
+                  description="Datenbasierte Entscheidungen durch präzises Tracking und übersichtliche Dashboards."
                   iconColor="text-primary"
                 />
               </div>
             </div>
+          </div>
+
+          <div className="mt-20 text-center">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-lg font-semibold text-primary hover:gap-4 transition-all"
+            >
+              Alle 19 Services entdecken <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -233,50 +243,36 @@ export default function Home() {
               <Image src="/logo.svg" alt="creavoid" width={140} height={40} className="brightness-0 invert h-6 w-auto" />
             </div>
             <p className="text-gray-400 text-sm">
-              Empowering businesses with next-gen technology and marketing strategies.
+              Wir befähigen Unternehmen mit modernster Technologie und Marketing-Strategien.
             </p>
           </div>
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link href="/about" className="hover:text-white">About Us</Link></li>
+              <li><Link href="/about" className="hover:text-white">Über uns</Link></li>
               <li><Link href="/services" className="hover:text-white">Services</Link></li>
-              <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+              <li><Link href="/contact" className="hover:text-white">Kontakt</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Resources</h4>
+            <h4 className="font-bold mb-4">Ressourcen</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
               <li><Link href="/store" className="hover:text-white">Store</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Legal</h4>
+            <h4 className="font-bold mb-4">Rechtliches</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
-              <li><Link href="/imprint" className="hover:text-white">Imprint</Link></li>
+              <li><Link href="/privacy" className="hover:text-white">Datenschutz</Link></li>
+              <li><Link href="/imprint" className="hover:text-white">Impressum</Link></li>
             </ul>
           </div>
         </div>
         <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs">
-          © {new Date().getFullYear()} creavoid. All rights reserved.
+          © {new Date().getFullYear()} creavoid. Alle Rechte vorbehalten.
         </div>
       </footer>
-    </div>
-  );
-}
-
-function ServiceItem({ icon, title, description, iconColor = "text-primary" }: { icon: React.ReactNode; title: string; description: string; iconColor?: string }) {
-  return (
-    <div className="flex gap-4 items-start group">
-      <div className={`shrink-0 p-0`}>
-        {React.cloneElement(icon as React.ReactElement<{ className?: string }>, { className: `w-8 h-8 ${iconColor}` })}
-      </div>
-      <div>
-        <h3 className="text-xl font-bold font-serif mb-2">{title}</h3>
-        <p className="text-muted-foreground leading-relaxed text-sm">{description}</p>
-      </div>
     </div>
   );
 }
