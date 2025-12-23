@@ -130,7 +130,7 @@ export default function Home() {
 
             {/* Card 2: Gradient - AI Agents */}
             <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] transition-shadow duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.45)]"
+              className="relative overflow-hidden rounded-[2.5rem] p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_50px_-12px_rgba(41,160,177,0.25)] transition-shadow duration-500 hover:shadow-[0_40px_80px_-15px_rgba(41,160,177,0.35)]"
               style={{
                 background: 'linear-gradient(300deg, #29A0B1 25%, #FF6B6B 100%)'
               }}
