@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowRight, Star, Grid, Megaphone, CheckCircle2, ShoppingCart, Bot, Settings2, Code2, Palette, Search, Mail, Users, Link as LinkIcon, Brain, Terminal } from "lucide-react";
 import React from "react";
 import { MegaMenu } from "@/components/layout/MegaMenu";
+import { ServiceItem } from "@/components/ServiceItem";
 import { ServiceTabs } from "@/components/ServiceTabs";
 import { HeroAnimation } from "@/components/HeroAnimation";
 import { motion } from "framer-motion";
@@ -109,12 +110,12 @@ export default function Home() {
 
             {/* Card 1: Black - Web & SaaS */}
             <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] bg-[#000000] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] transition-shadow duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.45)] group"
+              className="relative overflow-hidden rounded-[2.5rem] bg-[#000000] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] transition-shadow duration-500 hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] group"
               whileHover={{ y: -12, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <div className="mb-10 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
-                <Terminal className="h-8 w-8 text-primary" />
+                <Terminal className="h-8 w-8 text-white" />
               </div>
               <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
                 Web & SaaS<br />Development
@@ -129,30 +130,30 @@ export default function Home() {
 
             {/* Card 2: Gradient - AI Agents */}
             <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_50px_-12px_rgba(41,160,177,0.25)] transition-shadow duration-500 hover:shadow-[0_40px_80px_-15px_rgba(41,160,177,0.35)] group"
+              className="relative overflow-hidden rounded-[2.5rem] p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.25)] transition-shadow duration-500 hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.35)] group"
               style={{
                 background: 'linear-gradient(300deg, #29A0B1 25%, #FF6B6B 100%)'
               }}
               whileHover={{ y: -12, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <div className="mb-10 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
-                <Bot className="h-8 w-8 text-white" />
+              <div className="mb-10 w-16 h-16 rounded-2xl bg-[#000000]/10 flex items-center justify-center">
+                <Bot className="h-8 w-8 text-[#000000]" />
               </div>
-              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight text-white">
+              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
                 AI Agents &<br />Automation
               </h3>
-              <p className="text-white/90 leading-relaxed text-lg font-light">
-                Streamline your operations with intelligent AI agents that handle customer support, lead qualification, and routine tasks 24/7. Reduce costs by up to 60% while improving response times and customer satisfaction.
+              <p className="text-[#000000]/80 leading-relaxed text-lg font-light">
+                Streamline your operations with intelligent AI agents that handle customer support, lead qualification, and routine tasks 24/7. Reduce costs by up to 60%.
               </p>
-              <div className="mt-auto pt-8 flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all">
+              <div className="mt-auto pt-8 flex items-center gap-2 text-[#000000] font-bold group-hover:gap-4 transition-all">
                 Learn More <ArrowRight className="w-5 h-5" />
               </div>
             </motion.div>
 
             {/* Card 3: White - Paid Advertising */}
             <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] bg-white p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] transition-shadow duration-500 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.45)] group"
+              className="relative overflow-hidden rounded-[2.5rem] bg-white p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-shadow duration-500 hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] group"
               whileHover={{ y: -12, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
@@ -224,7 +225,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs" suppressHydrationWarning>
+        <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs">
           © {new Date().getFullYear()} creavoid. Alle Rechte vorbehalten.
         </div>
       </footer>
