@@ -104,13 +104,13 @@ export default function Home() {
       </section>
 
       {/* Feature Cards with Realistic Shadows */}
-      <section className="py-24 bg-white/50">
+      <section className="pt-24 pb-40 bg-white/50 relative z-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-10 justify-items-center">
 
             {/* Card 1: Black - Web & SaaS */}
             <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] bg-[#000000] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] transition-shadow duration-500 hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] group"
+              className="relative rounded-[2.5rem] bg-[#000000] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 hover:shadow-[0_50px_80px_-12px_rgba(0,0,0,0.5)] hover:z-30 group"
               whileHover={{ y: -12, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
@@ -130,7 +130,7 @@ export default function Home() {
 
             {/* Card 2: Gradient - AI Agents */}
             <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.25)] transition-shadow duration-500 hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.35)] group"
+              className="relative rounded-[2.5rem] p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_40px_-15px_rgba(41,160,177,0.25)] transition-all duration-500 hover:shadow-[0_50px_80px_-12px_rgba(41,160,177,0.4)] hover:z-30 group"
               style={{
                 background: 'linear-gradient(300deg, #29A0B1 25%, #FF6B6B 100%)'
               }}
@@ -153,7 +153,7 @@ export default function Home() {
 
             {/* Card 3: White - Paid Advertising */}
             <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] bg-white p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-shadow duration-500 hover:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] group"
+              className="relative rounded-[2.5rem] bg-white p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:shadow-[0_50px_80px_-12px_rgba(0,0,0,0.15)] hover:z-30 group"
               whileHover={{ y: -12, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
