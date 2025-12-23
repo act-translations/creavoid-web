@@ -58,7 +58,7 @@ The objective is to build a state-of-the-art, modern corporate website for Creav
 - [x] **Version Control**:
     - Initialized local Git repository.
     - Transferred repository to organization `act-translations/creavoid-web`.
-    - **SSH-Auth configured** and successfully pushing to `main`.
+    - **SSH-Auth configured**: Switched to SSH to resolve 403 errors; successfully pushed to `main`.
 - [x] **Deployment**:
     - Connected Vercel to the new organization repository.
     - Automated CI/CD pipeline active.
@@ -71,7 +71,7 @@ The objective is to build a state-of-the-art, modern corporate website for Creav
 **Session Date**: 2025-12-23 (Updated - Rebase & Conflict Resolution)
 
 ### Status Summary:
-- ✅ **Major Success**: Git & Vercel environment fully functional with SSH.
+- ✅ **Major Success**: Git & Vercel environment fully functional with SSH (Remote URL updated to SSH).
 - ✅ **Website Content**: All 19 service subpages live and in German.
 - ✅ **Translations**: Homepage and core pages localized to German (primary).
 - ✅ **Frontend UI**: Refined Feature Cards with buttery-smooth animations and consistent shadowing. Hero section modernized with interactive animations.
