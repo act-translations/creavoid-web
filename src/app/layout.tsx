@@ -15,8 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Creavoid - Transformieren Sie Ihr Business",
-  description: "Web-Entwicklung, KI-Automatisierung und Performance-Marketing Services",
+  title: "Creavoid - Transform Your Business",
+  description: "Web Development, AI Automation, and Paid Advertising Services",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${robotoSlab.variable} ${inter.variable} font-sans antialiased`}
       >

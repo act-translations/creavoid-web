@@ -41,10 +41,10 @@ export default async function BlogPage() {
             {/* Page Header */}
             <div className="mb-12 text-center">
                 <h1 className="font-serif text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl">
-                    Aktuelle <span className="text-[#29A0B1]">Einblicke</span>
+                    Latest <span className="text-[#29A0B1]">Insights</span>
                 </h1>
                 <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground">
-                    Analysen zu Technologie, Business und digitaler Kultur.
+                    Explorations in Technology, Lifestyle, and Digital Culture.
                 </p>
             </div>
 
@@ -67,7 +67,7 @@ export default async function BlogPage() {
                                     />
                                 ) : (
                                     <div className="flex h-full w-full items-center justify-center bg-secondary text-muted-foreground">
-                                        Kein Bild
+                                        No Image
                                     </div>
                                 )}
                                 {/* Category Badge */}
@@ -88,7 +88,7 @@ export default async function BlogPage() {
                                     </div>
                                     <div className="flex items-center gap-1">
                                         <Calendar className="h-3 w-3" />
-                                        {new Date(post.date).toLocaleDateString("de-DE")}
+                                        {new Date(post.date).toLocaleDateString()}
                                     </div>
                                 </div>
 
@@ -102,7 +102,7 @@ export default async function BlogPage() {
                                 />
 
                                 <div className="mt-auto flex items-center text-sm font-bold text-primary">
-                                    Artikel lesen <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                    Read Article <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                 </div>
                             </div>
                         </Link>

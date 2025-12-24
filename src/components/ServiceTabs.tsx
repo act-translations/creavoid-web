@@ -9,32 +9,32 @@ import { ArrowRight } from "lucide-react";
 const groupedServices = [
     {
         id: "ai",
-        label: "KI & Automatisierung",
-        description: "Zukunftssichere Automatisierung",
+        label: "AI & Automation",
+        description: "Future-proof Automation",
         items: services.filter(s => ["ai-consulting", "ai-implementation", "process-automation", "ai-agents", "marketing-automation"].includes(s.slug))
     },
     {
         id: "marketing",
-        label: "Digitales Marketing",
-        description: "Reichweite & Performance",
+        label: "Digital Marketing",
+        description: "Reach & Performance",
         items: services.filter(s => ["seo", "sea", "content-marketing", "email-marketing", "smm", "affiliate"].includes(s.slug))
     },
     {
         id: "dev",
-        label: "Entwicklung",
-        description: "Software & Plattformen",
+        label: "Development",
+        description: "Software & Platforms",
         items: services.filter(s => ["web-development", "web-design", "xaas"].includes(s.slug))
     },
     {
         id: "consulting",
-        label: "Beratung",
-        description: "Strategie & Transformation",
+        label: "Consulting",
+        description: "Strategy & Transformation",
         items: services.filter(s => ["digital-strategy", "business-consulting"].includes(s.slug))
     },
     {
         id: "analytics",
-        label: "Analyse",
-        description: "Daten & Insights",
+        label: "Analytics",
+        description: "Data & Insights",
         items: services.filter(s => ["web-analytics", "marketing-analytics", "technical-monitoring"].includes(s.slug))
     }
 ];
@@ -104,7 +104,7 @@ export function ServiceTabs() {
                     href="/contact"
                     className="inline-flex items-center justify-center rounded-full text-lg font-bold transition-all h-16 px-12 bg-foreground text-background hover:bg-primary hover:text-white hover:scale-105 shadow-xl"
                 >
-                    Gemeinsam ein Projekt starten
+                    Start a Project together
                 </Link>
             </div>
         </div>
