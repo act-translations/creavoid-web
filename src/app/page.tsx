@@ -68,7 +68,7 @@ export default function Home() {
               Level up your business with <span className="text-primary italic">AI-driven</span> technology.
             </h1>
             <p className="text-xl text-muted-foreground max-w-xl leading-relaxed">
-              Wir transformieren Unternehmen durch maßgeschneiderte Software, intelligente KI-Agenten und Performance-Marketing auf höchstem Niveau.
+              We transform businesses through custom software, intelligent AI agents, and performance marketing at the highest level.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
@@ -110,9 +110,17 @@ export default function Home() {
 
             {/* Card 1: Black - Web & SaaS */}
             <motion.div
-              className="relative rounded-[2.5rem] bg-[#000000] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 hover:shadow-[0_50px_80px_-12px_rgba(0,0,0,0.5)] hover:z-30 group"
-              whileHover={{ y: -12, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="relative overflow-hidden rounded-[2.5rem] bg-[#000000] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] group"
+              initial={{
+                y: 0,
+                boxShadow: "0px 20px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              whileHover={{
+                y: -12,
+                scale: 1.02,
+                boxShadow: "0px 40px 80px -15px rgba(0, 0, 0, 0.4)"
+              }}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
               <div className="mb-10 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
                 <Terminal className="h-8 w-8 text-white" />
@@ -130,12 +138,20 @@ export default function Home() {
 
             {/* Card 2: Gradient - AI Agents */}
             <motion.div
-              className="relative rounded-[2.5rem] p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_40px_-15px_rgba(41,160,177,0.25)] transition-all duration-500 hover:shadow-[0_50px_80px_-12px_rgba(41,160,177,0.4)] hover:z-30 group"
+              className="relative overflow-hidden rounded-[2.5rem] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] group"
               style={{
                 background: 'linear-gradient(300deg, #29A0B1 25%, #FF6B6B 100%)'
               }}
-              whileHover={{ y: -12, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              initial={{
+                y: 0,
+                boxShadow: "0px 20px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              whileHover={{
+                y: -12,
+                scale: 1.02,
+                boxShadow: "0px 40px 80px -15px rgba(41, 160, 177, 0.35)"
+              }}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
               <div className="mb-10 w-16 h-16 rounded-2xl bg-[#000000]/10 flex items-center justify-center">
                 <Bot className="h-8 w-8 text-[#000000]" />
@@ -153,9 +169,17 @@ export default function Home() {
 
             {/* Card 3: White - Paid Advertising */}
             <motion.div
-              className="relative rounded-[2.5rem] bg-white p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 hover:shadow-[0_50px_80px_-12px_rgba(0,0,0,0.15)] hover:z-30 group"
-              whileHover={{ y: -12, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="relative overflow-hidden rounded-[2.5rem] bg-white p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] group"
+              initial={{
+                y: 0,
+                boxShadow: "0px 20px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              whileHover={{
+                y: -12,
+                scale: 1.02,
+                boxShadow: "0px 40px 80px -15px rgba(0, 0, 0, 0.4)"
+              }}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
               <div className="mb-10 w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center">
                 <Megaphone className="h-8 w-8 text-primary" />
@@ -199,34 +223,34 @@ export default function Home() {
               <Image src="/logo.svg" alt="creavoid" width={140} height={40} className="brightness-0 invert h-6 w-auto" />
             </div>
             <p className="text-gray-400 text-sm">
-              Wir befähigen Unternehmen mit modernster Technologie und Marketing-Strategien.
+              We empower businesses with cutting-edge technology and marketing strategies.
             </p>
           </div>
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link href="/about" className="hover:text-white">Über uns</Link></li>
+              <li><Link href="/about" className="hover:text-white">About us</Link></li>
               <li><Link href="/services" className="hover:text-white">Services</Link></li>
-              <li><Link href="/contact" className="hover:text-white">Kontakt</Link></li>
+              <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Ressourcen</h4>
+            <h4 className="font-bold mb-4">Resources</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
               <li><Link href="/store" className="hover:text-white">Store</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Rechtliches</h4>
+            <h4 className="font-bold mb-4">Legal</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link href="/privacy" className="hover:text-white">Datenschutz</Link></li>
-              <li><Link href="/imprint" className="hover:text-white">Impressum</Link></li>
+              <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
+              <li><Link href="/imprint" className="hover:text-white">Imprint</Link></li>
             </ul>
           </div>
         </div>
-        <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs">
-          © {new Date().getFullYear()} creavoid. Alle Rechte vorbehalten.
+        <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs" suppressHydrationWarning>
+          © {new Date().getFullYear()} creavoid. All rights reserved.
         </div>
       </footer>
     </div>

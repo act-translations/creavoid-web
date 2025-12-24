@@ -1,144 +1,110 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Bot, Settings2, Code2, Search, Megaphone, BarChart3, Cloud, Palette, Users, Link as LinkIcon, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { icons } from "@/data/services";
+import services, { icons } from "@/data/services";
+import { ArrowRight } from "lucide-react";
 
-const categories = [
+// Categorize services based on their slugs or predefined groups
+const groupedServices = [
     {
         id: "ai",
         label: "AI & Automation",
-        icon: Bot,
-        services: [
-            { slug: "ai-agents", title: "AI Agents", description: "Intelligente Chatbots & Assistenten.", icon: Bot },
-            { slug: "process-automation", title: "Process Automation", description: "Effiziente Workflows & RPA.", icon: Settings2 },
-            { slug: "ai-consulting", title: "AI Consulting", description: "Strategische KI-Beratung.", icon: icons.Brain },
-        ]
+        description: "Future-proof Automation",
+        items: services.filter(s => ["ai-consulting", "ai-implementation", "process-automation", "ai-agents", "marketing-automation"].includes(s.slug))
     },
     {
         id: "marketing",
         label: "Digital Marketing",
-        icon: Megaphone,
-        services: [
-            { slug: "seo", title: "SEO", description: "Top-Rankings bei Google.", icon: Search },
-            { slug: "sea", title: "SEA", description: "Performance Ad Kampagnen.", icon: Megaphone },
-            { slug: "smm", title: "Social Media", description: "Markenaufbau & Interaktion.", icon: Users },
-        ]
+        description: "Reach & Performance",
+        items: services.filter(s => ["seo", "sea", "content-marketing", "email-marketing", "smm", "affiliate"].includes(s.slug))
     },
     {
         id: "dev",
         label: "Development",
-        icon: Code2,
-        services: [
-            { slug: "web-development", title: "Web Dev", description: "Moderne Webanwendungen.", icon: Code2 },
-            { slug: "xaas", title: "XaaS", description: "Skalierbare Cloud-Lösungen.", icon: Cloud },
-            { slug: "web-design", title: "Web Design", description: "UI/UX & Mobile First.", icon: Palette },
-        ]
+        description: "Software & Platforms",
+        items: services.filter(s => ["web-development", "web-design", "xaas"].includes(s.slug))
+    },
+    {
+        id: "consulting",
+        label: "Consulting",
+        description: "Strategy & Transformation",
+        items: services.filter(s => ["digital-strategy", "business-consulting"].includes(s.slug))
     },
     {
         id: "analytics",
         label: "Analytics",
-        icon: BarChart3,
-        services: [
-            { slug: "web-analytics", title: "Web Analytics", description: "GA4 Expert Setups.", icon: BarChart3 },
-            { slug: "marketing-analytics", title: "Marketing Insights", description: "Datenbasierte Entscheidungen.", icon: icons.TrendingUp },
-        ]
+        description: "Data & Insights",
+        items: services.filter(s => ["web-analytics", "marketing-analytics", "technical-monitoring"].includes(s.slug))
     }
 ];
 
 export function ServiceTabs() {
-    const [activeTab, setActiveTab] = useState(categories[0].id);
-
     return (
-        <div className="w-full max-w-6xl mx-auto">
-            {/* Tabs Navigation */}
-            <div className="flex flex-wrap justify-center gap-2 mb-12 p-1 bg-muted/30 rounded-[2rem] border border-border/50 max-w-fit mx-auto">
-                {categories.map((cat) => (
-                    <button
-                        key={cat.id}
-                        onClick={() => setActiveTab(cat.id)}
-                        className={`
-              relative flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all
-              ${activeTab === cat.id ? "text-white" : "text-muted-foreground hover:text-foreground"}
-            `}
-                    >
-                        {activeTab === cat.id && (
-                            <motion.div
-                                layoutId="active-tab"
-                                className="absolute inset-0 bg-primary rounded-full"
-                                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                            />
-                        )}
-                        <cat.icon className="relative z-10 w-4 h-4" />
-                        <span className="relative z-10">{cat.label}</span>
-                    </button>
-                ))}
-            </div>
+        <div className="w-full max-w-7xl mx-auto space-y-24">
+            {groupedServices.map((category, catIndex) => (
+                <motion.div
+                    key={category.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, delay: catIndex * 0.1 }}
+                    className="relative"
+                >
+                    {/* Category Header */}
+                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-border/40 pb-6">
+                        <div>
+                            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block opacity-80">0{catIndex + 1}</span>
+                            <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground">{category.label}</h3>
+                        </div>
+                        <p className="text-muted-foreground/80 text-lg md:text-xl font-light max-w-xs md:text-right">
+                            {category.description}
+                        </p>
+                    </div>
 
-            {/* Tab Content */}
-            <div className="relative min-h-[400px]">
-                <AnimatePresence mode="wait">
-                    {categories.map((cat) => cat.id === activeTab && (
-                        <motion.div
-                            key={cat.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.4, ease: "easeOut" }}
-                            className="grid md:grid-cols-3 gap-6"
-                        >
-                            {cat.services.map((service, idx) => (
+                    {/* Services Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {category.items.map((service, idx) => {
+                            const Icon = icons[service.iconName] || icons.Bot;
+
+                            return (
                                 <Link
                                     key={service.slug}
                                     href={`/services/${service.slug}`}
-                                    className="group relative p-8 rounded-[2.5rem] bg-white border border-border/50 hover:border-primary/50 transition-all hover:shadow-2xl hover:shadow-primary/5 flex flex-col items-start gap-4 overflow-hidden"
+                                    className="group relative flex flex-col p-8 rounded-[2rem] bg-white border border-border/40 hover:border-primary/20 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] overflow-hidden"
                                 >
-                                    {/* Hover Accent */}
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/[0.03] rounded-bl-full translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform" />
+                                    <div className="flex items-start justify-between mb-6">
+                                        <div className="w-14 h-14 rounded-2xl bg-primary/5 group-hover:bg-primary text-primary group-hover:text-white transition-colors duration-500 flex items-center justify-center">
+                                            <Icon className="w-7 h-7" />
+                                        </div>
+                                        <div className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground group-hover:border-primary group-hover:text-primary transition-colors">
+                                            <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+                                        </div>
+                                    </div>
 
-                                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                                        <service.icon className="w-6 h-6" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <h3 className="text-xl font-bold font-serif group-hover:text-primary transition-colors flex items-center gap-2">
-                                            {service.title}
-                                            <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                                        </h3>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
-                                            {service.description}
-                                        </p>
-                                    </div>
+                                    <h4 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                                        {service.title}
+                                    </h4>
+
+                                    <p className="text-muted-foreground text-sm leading-relaxed mb-4 group-hover:text-muted-foreground/80">
+                                        {service.description}
+                                    </p>
+
+                                    {/* Hover Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                                 </Link>
-                            ))}
+                            );
+                        })}
+                    </div>
+                </motion.div>
+            ))}
 
-                            {/* "View All" Card */}
-                            <Link
-                                href="/services"
-                                className="group p-8 rounded-[2.5rem] bg-black text-white flex flex-col items-start justify-center gap-4 hover:bg-primary transition-colors shadow-xl"
-                            >
-                                <h3 className="text-2xl font-bold font-serif leading-tight">
-                                    Discover All<br />{cat.label} Solutions
-                                </h3>
-                                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/70 group-hover:text-white transition-colors">
-                                    Learn More <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                                </div>
-                            </Link>
-                        </motion.div>
-                    ))}
-                </AnimatePresence>
-            </div>
-
-            <div className="mt-20 text-center">
+            <div className="mt-24 text-center">
                 <Link
-                    href="/services"
-                    className="inline-flex items-center gap-4 text-xl font-bold font-serif hover:gap-6 transition-all group"
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-full text-lg font-bold transition-all h-16 px-12 bg-foreground text-background hover:bg-primary hover:text-white hover:scale-105 shadow-xl"
                 >
-                    View our full list of 19 services
-                    <span className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <ArrowRight className="w-6 h-6" />
-                    </span>
+                    Start a Project together
                 </Link>
             </div>
         </div>
