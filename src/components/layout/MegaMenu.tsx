@@ -28,123 +28,123 @@ export function MegaMenu() {
 
                 {/* 1. AI & Automation Services */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">AI & Automation</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent">KI & Automatisierung</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
-                            <li className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
+                        <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
+                            <div className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <Bot className="w-5 h-5 text-primary" />
-                                <span className="font-bold text-lg font-serif">AI Solutions</span>
-                            </li>
-                            <ListItem title="AI Consulting" href="/services/ai-consulting">
-                                Strategy, Readiness Assessment, Use Cases.
+                                <span className="font-bold text-lg font-serif">KI-Lösungen</span>
+                            </div>
+                            <ListItem title="KI-Beratung" href="/services/ai-consulting">
+                                Strategie, Readiness-Check, Use-Cases.
                             </ListItem>
-                            <ListItem title="AI Implementation" href="/services/ai-implementation">
-                                Integration, Custom Solutions, Model Training.
+                            <ListItem title="KI-Implementierung" href="/services/ai-implementation">
+                                Integration, maßgeschneiderte Lösungen, Modell-Training.
                             </ListItem>
-                            <ListItem title="AI Process Automation" href="/services/process-automation">
+                            <ListItem title="KI-Prozessautomatisierung" href="/services/process-automation">
                                 Workflows, RPA, Business Intelligence.
                             </ListItem>
-                            <ListItem title="AI Agents" href="/services/ai-agents">
-                                Chatbots, Virtual Assistants, Sales Agents.
+                            <ListItem title="KI-Agenten" href="/services/ai-agents">
+                                Chatbots, virtuelle Assistenten, Sales-Agents.
                             </ListItem>
-                            <ListItem title="Marketing Automation" href="/services/marketing-automation">
-                                CRM, Lead Nurturing, Customer Journey.
+                            <ListItem title="Marketing-Automatisierung" href="/services/marketing-automation">
+                                CRM, Lead-Nurturing, Customer-Journey.
                             </ListItem>
-                        </ul>
+                        </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* 2. Digital Marketing */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">Digital Marketing</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent">Digitales Marketing</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
-                            <li className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
+                        <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
+                            <div className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <Megaphone className="w-5 h-5 text-primary" />
                                 <span className="font-bold text-lg font-serif">Growth Marketing</span>
-                            </li>
+                            </div>
                             <ListItem title="SEO" href="/services/seo">
-                                Technical, OnPage, High-Ranking Strategies.
+                                Technisches SEO, OnPage, Top-Rankings.
                             </ListItem>
-                            <ListItem title="SEA (Ads)" href="/services/sea">
+                            <ListItem title="SEA (Google Ads)" href="/services/sea">
                                 Google Ads, Microsoft Ads, Shopping.
                             </ListItem>
-                            <ListItem title="Content Marketing" href="/services/content-marketing">
-                                Strategy, Blogs, Video, Whitepapers.
+                            <ListItem title="Content-Marketing" href="/services/content-marketing">
+                                Strategie, Blogs, Video, Whitepapers.
                             </ListItem>
-                            <ListItem title="Email Marketing" href="/services/email-marketing">
-                                Campaigns, Automation, Personalization.
+                            <ListItem title="E-Mail-Marketing" href="/services/email-marketing">
+                                Kampagnen, Automatisierung, Personalisierung.
                             </ListItem>
                             <ListItem title="Social Media (SMM)" href="/services/smm">
                                 Management, Content, Paid Social.
                             </ListItem>
-                            <ListItem title="Affiliate Marketing" href="/services/affiliate">
-                                Strategy, Network Management, Tracking.
+                            <ListItem title="Affiliate-Marketing" href="/services/affiliate">
+                                Strategie, Netzwerk-Management, Tracking.
                             </ListItem>
-                        </ul>
+                        </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* 3. Development */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">Development</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent">Entwicklung</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
-                            <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
+                        <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
+                            <div className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <Code2 className="w-5 h-5 text-primary" />
                                 <span className="font-bold text-lg font-serif">Engineering</span>
-                            </li>
-                            <ListItem title="Web Development" href="/services/web-development">
+                            </div>
+                            <ListItem title="Web-Entwicklung" href="/services/web-development">
                                 Full-Stack, Frontend, Backend, E-Commerce.
                             </ListItem>
-                            <ListItem title="Web Design" href="/services/web-design">
-                                UI/UX, Landing Pages, Mobile-First.
+                            <ListItem title="Web-Design" href="/services/web-design">
+                                UI/UX, Landing-Pages, Mobile-First.
                             </ListItem>
-                            <ListItem title="XaaS Development" href="/services/xaas">
-                                SaaS, AIaaS, API Development, Cloud Solutions.
+                            <ListItem title="XaaS-Entwicklung" href="/services/xaas">
+                                SaaS, AIaaS, API-Entwicklung, Cloud-Lösungen.
                             </ListItem>
-                        </ul>
+                        </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* 4. Consultation */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">Consulting</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent">Beratung</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
-                            <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
+                        <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
+                            <div className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <Lightbulb className="w-5 h-5 text-primary" />
-                                <span className="font-bold text-lg font-serif">Strategy</span>
-                            </li>
-                            <ListItem title="Digital Strategy" href="/services/digital-strategy">
-                                Business Analysis, Transformation Maps.
+                                <span className="font-bold text-lg font-serif">Strategie</span>
+                            </div>
+                            <ListItem title="Digitale Strategie" href="/services/digital-strategy">
+                                Business-Analyse, Transformations-Roadmaps.
                             </ListItem>
                             <ListItem title="Business & Technology" href="/services/business-consulting">
-                                AI Strategy, Tech Stack, Process Opt.
+                                KI-Strategie, Tech-Stack, Prozessopt.
                             </ListItem>
-                        </ul>
+                        </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* 5. Analytics */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">Analytics</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent">Analyse</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
-                            <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
+                        <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
+                            <div className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <BarChart className="w-5 h-5 text-primary" />
-                                <span className="font-bold text-lg font-serif">Data & Insights</span>
-                            </li>
-                            <ListItem title="Web Analytics" href="/services/web-analytics">
-                                GA4, Dashboards, Conversion Tracking.
+                                <span className="font-bold text-lg font-serif">Daten & Insights</span>
+                            </div>
+                            <ListItem title="Web-Analyse" href="/services/web-analytics">
+                                GA4, Dashboards, Conversion-Tracking.
                             </ListItem>
-                            <ListItem title="Marketing Analytics" href="/services/marketing-analytics">
-                                Attribution, ROI, Performance.
+                            <ListItem title="Marketing-Analyse" href="/services/marketing-analytics">
+                                Attributionsmodelle, ROI, Performance.
                             </ListItem>
-                            <ListItem title="Technical Monitoring" href="/services/technical-monitoring">
-                                Search Console, Performance, SEO.
+                            <ListItem title="Technisches Monitoring" href="/services/technical-monitoring">
+                                Search Console, Performance, technisches SEO.
                             </ListItem>
-                        </ul>
+                        </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 

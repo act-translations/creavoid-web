@@ -62,79 +62,79 @@ const services: Service[] = [
     // 1. AI & Automation Services
     {
         slug: "ai-consulting",
-        title: "AI Consulting",
-        description: "Strategic advisory, AI readiness analysis, and use case identification.",
+        title: "KI-Beratung",
+        description: "Strategische Beratung, KI-Readiness-Analyse und Identifikation von Anwendungsfällen.",
         iconName: "Brain",
-        longDescription: "Artificial Intelligence offers enormous opportunities for companies of all sizes. However, the path to successful AI integration is complex. Our AI Consulting Services guide you from the initial idea to full implementation – with a clear strategy tailored to your business goals.",
+        longDescription: "Künstliche Intelligenz bietet enorme Chancen für Unternehmen jeder Größe. Doch der Weg zur erfolgreichen KI-Integration ist komplex. Unsere KI-Beratung begleitet Sie von der ersten Idee bis zur vollen Implementierung – mit einer klaren Strategie, die auf Ihre Geschäftsziele zugeschnitten ist.",
         benefits: [
             {
-                title: "Measurable Results",
-                description: "We focus on AI solutions that deliver real business value and demonstrably improve your KPIs.",
+                title: "Messbare Ergebnisse",
+                description: "Wir konzentrieren uns auf KI-Lösungen, die echten geschäftlichen Mehrwert bieten und Ihre KPIs nachweislich verbessern.",
                 icon: "TrendingUp"
             },
             {
-                title: "Industry Expertise",
-                description: "Over 50 successfully implemented AI projects across various industries – from E-Commerce to SaaS.",
+                title: "Branchenexpertise",
+                description: "Über 50 erfolgreich umgesetzte KI-Projekte in verschiedenen Branchen – von E-Commerce bis SaaS.",
                 icon: "Briefcase"
             },
             {
                 title: "End-to-End Support",
-                description: "From readiness analysis to productive operation – we are with you every step of the way.",
+                description: "Von der Readiness-Analyse bis zum produktiven Betrieb – wir begleiten Sie bei jedem Schritt.",
                 icon: "Users"
             }
         ],
         process: [
             {
                 step: 1,
-                title: "AI Readiness Assessment",
-                description: "We analyze your current infrastructure, data landscape, and processes to identify potential."
+                title: "KI-Readiness-Check",
+                description: "Wir analysieren Ihre aktuelle Infrastruktur, Datenlandschaft und Prozesse, um Potenziale zu identifizieren."
             },
             {
                 step: 2,
-                title: "Use Case Prioritization",
-                description: "Together, we define the most promising AI use cases based on ROI, feasibility, and strategic relevance."
+                title: "Use Case Priorisierung",
+                description: "Gemeinsam definieren wir die vielversprechendsten KI-Anwendungsfälle basierend auf ROI und Machbarkeit."
             },
             {
                 step: 3,
-                title: "Roadmap Development",
-                description: "We create a detailed roadmap with milestones, resource planning, and budgeting."
+                title: "Roadmap-Erstellung",
+                description: "Wir erstellen einen detaillierten Plan mit Meilensteinen, Ressourcenplanung und Budgetierung."
             },
             {
                 step: 4,
-                title: "Implementation Support",
-                description: "Guidance during implementation, testing, and optimization for maximum performance."
+                title: "Begleitung der Umsetzung",
+                description: "Unterstützung während der Implementierung, beim Testen und der Optimierung für maximale Performance."
             }
         ],
         features: [
-            "Comprehensive AI Readiness Assessments",
-            "Use Case Workshops with your team",
-            "ROI Calculation and Business Case creation",
-            "Technology Evaluation and Vendor Selection",
-            "Data Strategy and Governance Consulting",
-            "Change Management and Team Training",
-            "Prototype Development (MVP)",
-            "Continuous Optimization and Monitoring"
+            "Umfassende KI-Readiness-Assessments",
+            "Use Case Workshops mit Ihrem Team",
+            "ROI-Kalkulation und Business Case Erstellung",
+            "Technologie-Evaluierung und Tool-Auswahl",
+            "Datenstrategie und Governance-Beratung",
+            "Change Management und Team-Schulungen",
+            "Prototyp-Entwicklung (MVP)",
+            "Kontinuierliche Optimierung und Monitoring"
         ],
         faq: [
             {
-                question: "How long does a typical AI Consulting project last?",
-                answer: "An initial AI Readiness Assessment usually takes 2-4 weeks. For full strategy development and roadmap, plan for 6-12 weeks. Implementation depends on the scope."
+                question: "Wie lange dauert ein typisches KI-Beratungsprojekt?",
+                answer: "Ein initialer KI-Readiness-Check dauert in der Regel 2-4 Wochen. Für eine vollständige Strategieentwicklung sollten Sie 6-12 Wochen einplanen."
             },
             {
-                question: "Do we need existing AI know-how in the team?",
-                answer: "No, that is not required. We train your team and build the necessary competencies together. We pick you up right where you are."
+                question: "Benötigen wir bereits KI-Know-how im Team?",
+                answer: "Nein, das ist nicht erforderlich. Wir schulen Ihr Team und bauen die notwendigen Kompetenzen gemeinsam auf."
             },
             {
-                question: "Which industries do you serve?",
-                answer: "We have experience in E-Commerce, SaaS, Healthcare, Financial Services, Manufacturing, and Professional Services. Every industry benefits differently from AI."
+                question: "Welche Branchen unterstützen Sie?",
+                answer: "Wir haben Erfahrung in E-Commerce, SaaS, Healthcare, Finanzdienstleistungen und Industrie. Jede Branche profitiert individuell von KI."
             },
             {
-                question: "How much does AI Consulting cost?",
-                answer: "Costs depend on the scope. An initial assessment starts at €5,000. For comprehensive strategy projects, plan for €15,000-50,000. We create individual quotes."
+                question: "Was kostet eine KI-Beratung?",
+                answer: "Die Kosten hängen vom Umfang ab. Ein initialer Check startet bei 5.000 €. Für umfassende Strategieprojekte erstellen wir individuelle Angebote."
             },
             {
-                question: "Can you also handle the implementation?",
-                answer: "Yes, absolutely! We offer both strategic consulting and hands-on implementation. Many clients start with consulting and seamlessly transition into execution."
+                question: "Übernehmen Sie auch die Umsetzung?",
+                answer: "Ja, absolut! Wir bieten sowohl die strategische Beratung als auch die praktische technische Umsetzung aus einer Hand an."
             }
         ],
         tools: [
@@ -147,41 +147,53 @@ const services: Service[] = [
         ],
         useCases: [
             {
-                title: "Customer Service Automation",
-                description: "Implementation of an AI-supported support system that automatically answers 70% of customer inquiries and increases customer satisfaction by 35%."
+                title: "Kundenservice-Automatisierung",
+                description: "Implementierung eines KI-gestützten Support-Systems, das 70% der Anfragen automatisiert beantwortet."
             },
             {
-                title: "Predictive Analytics for E-Commerce",
-                description: "Development of a forecasting system that precisely predicts demand, reduces storage costs by 25%, and minimizes out-of-stock situations."
+                title: "Predictive Analytics für E-Commerce",
+                description: "Prognose-System zur präzisen Vorhersage der Nachfrage und Optimierung der Lagerhaltung."
             },
             {
-                title: "Lead Scoring & Qualification",
-                description: "AI model for automatic evaluation and prioritization of leads, increasing conversion rates by 40% and relieving sales teams."
+                title: "KI-Lead-Scoring",
+                description: "Automatisierte Bewertung und Priorisierung von Leads zur Steigerung der Conversion-Rate um 40%."
             }
         ]
     },
     {
         slug: "ai-implementation",
-        title: "AI Implementation",
-        description: "Integration of custom AI solutions and training of specific models.",
+        title: "KI-Implementierung",
+        description: "Integration maßgeschneiderter KI-Lösungen und Training spezifischer Modelle.",
         iconName: "Cpu",
+        longDescription: "Wir bringen KI in die Praxis. Von der Integration bestehender Sprachmodelle (LLMs) bis hin zum Training eigener Modelle auf Ihren Daten – wir entwickeln Lösungen, die funktionieren.",
+        benefits: [
+            { title: "Nahtlose Integration", description: "Wir integrieren KI direkt in Ihre bestehenden Systeme und Workflows.", icon: "Settings2" },
+            { title: "Eigene Datenhoheit", description: "Wir stellen sicher, dass Ihre Daten sicher sind und Sie die volle Kontrolle behalten.", icon: "Briefcase" }
+        ],
+        process: [
+            { step: 1, title: "Datenvorbereitung", description: "Säuberung und Strukturierung Ihrer Daten für das KI-Training." },
+            { step: 2, title: "Modellauswahl", description: "Wahl des passenden Modells (OpenAI, Anthropic, Open Source)." },
+            { step: 3, title: "Feinabstimmung", description: "Anpassung des Modells an Ihre spezifischen Anforderungen." }
+        ]
     },
     {
         slug: "process-automation",
-        title: "Process Automation",
-        description: "Workflow automation, RPA, and BI to minimize repetitive tasks.",
+        title: "Prozessautomatisierung",
+        description: "Workflow-Automatisierung, RPA und BI zur Minimierung repetitiver Aufgaben.",
         iconName: "Settings2",
+        longDescription: "Befreien Sie Ihr Team von manuellen Aufgaben. Wir automatisieren komplexe Geschäftsprozesse durch intelligenten Einsatz von Software und Robotik.",
     },
     {
         slug: "ai-agents",
-        title: "AI Agents",
-        description: "Intelligent chatbots, virtual assistants, and 24/7 sales agents.",
+        title: "KI-Agenten",
+        description: "Intelligente Chatbots, virtuelle Assistenten und 24/7 Sales-Agents.",
         iconName: "Bot",
+        longDescription: "KI-Agenten, die nicht nur chatten, sondern handeln. Unsere Agenten übernehmen Aufgaben wie Terminbuchungen, Support und Lead-Qualifizierung.",
     },
     {
         slug: "marketing-automation",
-        title: "Marketing Automation",
-        description: "CRM integration, lead nurturing, and automated customer journeys.",
+        title: "Marketing-Automatisierung",
+        description: "CRM-Integration, Lead-Nurturing und automatisierte Customer Journeys.",
         iconName: "MessagesSquare",
     },
 
@@ -189,91 +201,93 @@ const services: Service[] = [
     {
         slug: "seo",
         title: "SEO",
-        description: "Technical and content optimization for top rankings and organic traffic.",
+        description: "Technische und inhaltliche Optimierung für Top-Rankings und organischen Traffic.",
         iconName: "Search",
+        longDescription: "Sichtbarkeit ist alles. Wir optimieren Ihre Website technisch und inhaltlich, damit Sie bei Google ganz oben stehen.",
     },
     {
         slug: "sea",
         title: "SEA (Google Ads)",
-        description: "Performance campaigns on Google, Microsoft, and shopping channels.",
+        description: "Performance-Kampagnen auf Google, Microsoft und in Shopping-Kanälen.",
         iconName: "Megaphone",
     },
     {
         slug: "content-marketing",
-        title: "Content Marketing",
-        description: "Strategic creation of blogs, videos, and whitepapers.",
+        title: "Content-Marketing",
+        description: "Strategische Erstellung von Blogs, Videos und Whitepapers.",
         iconName: "FileText",
     },
     {
         slug: "email-marketing",
-        title: "Email Marketing",
-        description: "Automated campaigns and personalization for customer retention.",
+        title: "E-Mail-Marketing",
+        description: "Automatisierte Kampagnen und Personalisierung zur Kundenbindung.",
         iconName: "Mail",
     },
     {
         slug: "smm",
         title: "Social Media Marketing",
-        description: "Management, content creation, and paid social for your brand.",
+        description: "Management, Content-Erstellung und Paid Social für Ihre Marke.",
         iconName: "Users",
     },
     {
         slug: "affiliate",
-        title: "Affiliate Marketing",
-        description: "Strategy and partner management to increase reach.",
+        title: "Affiliate-Marketing",
+        description: "Strategie und Partner-Management zur Steigerung der Reichweite.",
         iconName: "LinkIcon",
     },
 
     // 3. Development
     {
         slug: "web-development",
-        title: "Web Development",
-        description: "Full-stack solutions, frontend, backend, and e-commerce platforms.",
+        title: "Web-Entwicklung",
+        description: "Full-Stack-Lösungen, Frontend, Backend und E-Commerce-Plattformen.",
         iconName: "Code2",
+        longDescription: "Wir bauen die Technologie von morgen. Mit Next.js, React und modernen Cloud-Infrastrukturen entwickeln wir performante Web-Anwendungen.",
     },
     {
         slug: "web-design",
-        title: "Web Design",
-        description: "UI/UX, landing pages, and mobile-first designs focused on conversion.",
+        title: "Web-Design",
+        description: "UI/UX, Landing-Pages und Mobile-First-Designs mit Fokus auf Conversion.",
         iconName: "Palette",
     },
     {
         slug: "xaas",
-        title: "XaaS Development",
-        description: "SaaS, AIaaS, and scalable cloud solutions via API.",
+        title: "XaaS-Entwicklung",
+        description: "SaaS, AIaaS und skalierbare Cloud-Lösungen via API.",
         iconName: "Cloud",
     },
 
     // 4. Consulting
     {
         slug: "digital-strategy",
-        title: "Digital Strategy",
-        description: "Comprehensive business analysis and digital transformation roadmaps.",
+        title: "Digitale Strategie",
+        description: "Umfassende Business-Analyse und digitale Transformations-Roadmaps.",
         iconName: "Lightbulb",
     },
     {
         slug: "business-consulting",
-        title: "Business Consulting",
-        description: "Advisory on tech stack, process optimization, and AI strategy.",
+        title: "Business-Beratung",
+        description: "Beratung zu Tech-Stack, Prozessoptimierung und KI-Strategie.",
         iconName: "Briefcase",
     },
 
     // 5. Analytics
     {
         slug: "web-analytics",
-        title: "Web Analytics",
-        description: "GA4 setup, dashboards, and precise conversion tracking.",
+        title: "Web-Analyse",
+        description: "GA4-Setup, Dashboards und präzises Conversion-Tracking.",
         iconName: "BarChart3",
     },
     {
         slug: "marketing-analytics",
-        title: "Marketing Analytics",
-        description: "Attribution models, ROI analyses, and performance insights.",
+        title: "Marketing-Analyse",
+        description: "Attributionsmodelle, ROI-Analysen und Performance-Insights.",
         iconName: "TrendingUp",
     },
     {
         slug: "technical-monitoring",
-        title: "Technical Monitoring",
-        description: "Search Console monitoring, performance, and technical SEO.",
+        title: "Technisches Monitoring",
+        description: "Search Console Überwachung, Performance und technisches SEO.",
         iconName: "Activity",
     },
 ];

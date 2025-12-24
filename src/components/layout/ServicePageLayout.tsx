@@ -44,7 +44,7 @@ export function ServicePageLayout({ children, service }: ServicePageLayoutProps)
                             className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm"
                         >
                             <ShoppingCart className="w-4 h-4 mr-2" />
-                            Store
+                            Shop
                         </Link>
                     </div>
                 </div>
@@ -54,9 +54,9 @@ export function ServicePageLayout({ children, service }: ServicePageLayoutProps)
             <div className="bg-muted/30 border-b">
                 <div className="container mx-auto px-4 py-4">
                     <nav className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                        <Link href="/" className="hover:text-primary transition-colors">Startseite</Link>
                         <ChevronRight className="w-4 h-4" />
-                        <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+                        <Link href="/services" className="hover:text-primary transition-colors">Leistungen</Link>
                         <ChevronRight className="w-4 h-4" />
                         <span className="text-foreground font-medium">{service.title}</span>
                     </nav>
@@ -80,10 +80,10 @@ export function ServicePageLayout({ children, service }: ServicePageLayoutProps)
                         </p>
                     </div>
                     <div>
-                        <h4 className="font-bold mb-4">Quick Links</h4>
+                        <h4 className="font-bold mb-4">Schnellzugriff</h4>
                         <ul className="space-y-2 text-gray-400 text-sm">
                             <li><Link href="/about" className="hover:text-white">Über uns</Link></li>
-                            <li><Link href="/services" className="hover:text-white">Services</Link></li>
+                            <li><Link href="/services" className="hover:text-white">Leistungen</Link></li>
                             <li><Link href="/contact" className="hover:text-white">Kontakt</Link></li>
                         </ul>
                     </div>
@@ -91,7 +91,7 @@ export function ServicePageLayout({ children, service }: ServicePageLayoutProps)
                         <h4 className="font-bold mb-4">Ressourcen</h4>
                         <ul className="space-y-2 text-gray-400 text-sm">
                             <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
-                            <li><Link href="/store" className="hover:text-white">Store</Link></li>
+                            <li><Link href="/store" className="hover:text-white">Shop</Link></li>
                         </ul>
                     </div>
                     <div>

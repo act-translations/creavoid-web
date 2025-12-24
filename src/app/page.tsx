@@ -43,7 +43,7 @@ export default function Home() {
               className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm"
             >
               <ShoppingCart className="w-4 h-4 mr-2" />
-              Store
+              Shop
             </Link>
           </div>
         </div>
@@ -62,37 +62,37 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              Next-Gen Business Solutions
+              Business-Lösungen der nächsten Generation
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight font-serif leading-[1.1] text-foreground">
-              Level up your business with <span className="text-primary italic">AI-driven</span> technology.
+              Bringen Sie Ihr Unternehmen mit <span className="text-primary italic">KI-gestützter</span> Technologie auf das nächste Level.
             </h1>
             <p className="text-xl text-muted-foreground max-w-xl leading-relaxed">
-              We transform businesses through custom software, intelligent AI agents, and performance marketing at the highest level.
+              Wir transformieren Unternehmen durch maßgeschneiderte Software, intelligente KI-Agenten und Performance-Marketing auf höchstem Niveau.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full text-lg font-bold transition-all h-16 px-10 bg-accent text-white hover:bg-accent/90 hover:scale-105 shadow-xl shadow-accent/20"
               >
-                Let's talk business
+                Kostenloses Erstgespräch
               </Link>
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center rounded-full text-lg font-medium transition-all h-16 px-10 border-2 border-border bg-transparent hover:bg-secondary hover:border-secondary"
               >
-                Our Services
+                Unsere Leistungen
               </Link>
             </div>
             <div className="flex items-center gap-6 pt-4 text-sm text-muted-foreground/60 font-medium">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary" /> 100% Custom
+                <CheckCircle2 className="w-4 h-4 text-primary" /> 100% Individuell
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary" /> AI-Native
+                <CheckCircle2 className="w-4 h-4 text-primary" /> KI-Nativ
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary" /> Result-Driven
+                <CheckCircle2 className="w-4 h-4 text-primary" /> Ergebnisorientiert
               </div>
             </div>
           </div>
@@ -126,13 +126,13 @@ export default function Home() {
                 <Terminal className="h-8 w-8 text-white" />
               </div>
               <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
-                Web & SaaS<br />Development
+                Web & SaaS<br />Entwicklung
               </h3>
               <p className="text-gray-400 leading-relaxed text-lg font-light">
-                Build scalable web applications and SaaS platforms that grow with your business. Our full-stack development team creates robust, user-friendly solutions that drive engagement.
+                Entwickeln Sie skalierbare Webanwendungen und SaaS-Plattformen, die mit Ihrem Unternehmen wachsen. Unser Team erstellt robuste, benutzerfreundliche Lösungen.
               </p>
               <div className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
-                Learn More <ArrowRight className="w-5 h-5" />
+                Mehr erfahren <ArrowRight className="w-5 h-5" />
               </div>
             </motion.div>
 
@@ -157,13 +157,13 @@ export default function Home() {
                 <Bot className="h-8 w-8 text-[#000000]" />
               </div>
               <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
-                AI Agents &<br />Automation
+                KI-Agenten &<br />Automatisierung
               </h3>
               <p className="text-[#000000]/80 leading-relaxed text-lg font-light">
-                Streamline your operations with intelligent AI agents that handle customer support, lead qualification, and routine tasks 24/7. Reduce costs by up to 60%.
+                Optimieren Sie Ihren Betrieb mit intelligenten KI-Agenten für Kundensupport und Lead-Qualifizierung rund um die Uhr. Senken Sie Kosten um bis zu 60%.
               </p>
               <div className="mt-auto pt-8 flex items-center gap-2 text-[#000000] font-bold group-hover:gap-4 transition-all">
-                Learn More <ArrowRight className="w-5 h-5" />
+                Mehr erfahren <ArrowRight className="w-5 h-5" />
               </div>
             </motion.div>
 
@@ -185,13 +185,13 @@ export default function Home() {
                 <Megaphone className="h-8 w-8 text-primary" />
               </div>
               <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
-                Paid<br />Advertising
+                Performance<br />Marketing
               </h3>
               <p className="text-muted-foreground leading-relaxed text-lg font-light">
-                Generate qualified leads and maximize ROI with data-driven advertising campaigns across Google, Facebook, and LinkedIn. Performance marketing experts.
+                Generieren Sie qualifizierte Leads und maximieren Sie den ROI mit datengesteuerten Werbekampagnen auf Google, Meta und LinkedIn. Experten für digitales Wachstum.
               </p>
               <div className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
-                Learn More <ArrowRight className="w-5 h-5" />
+                Mehr erfahren <ArrowRight className="w-5 h-5" />
               </div>
             </motion.div>
 
@@ -205,9 +205,9 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold font-serif mb-6 tracking-tight">Our Expertise</h2>
+            <h2 className="text-4xl md:text-6xl font-bold font-serif mb-6 tracking-tight">Unsere Expertise</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Explore our comprehensive suite of digital services, from AI-driven automation to world-class software development.
+              Entdecken Sie unser umfassendes Angebot an digitalen Dienstleistungen, von KI-gestützter Automatisierung bis hin zu erstklassiger Softwareentwicklung.
             </p>
           </div>
 
@@ -223,34 +223,34 @@ export default function Home() {
               <Image src="/logo.svg" alt="creavoid" width={140} height={40} className="brightness-0 invert h-6 w-auto" />
             </div>
             <p className="text-gray-400 text-sm">
-              We empower businesses with cutting-edge technology and marketing strategies.
+              Wir befähigen Unternehmen mit modernsten Technologien und Marketingstrategien.
             </p>
           </div>
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link href="/about" className="hover:text-white">About us</Link></li>
-              <li><Link href="/services" className="hover:text-white">Services</Link></li>
-              <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+              <li><Link href="/about" className="hover:text-white">Über uns</Link></li>
+              <li><Link href="/services" className="hover:text-white">Leistungen</Link></li>
+              <li><Link href="/contact" className="hover:text-white">Kontakt</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Resources</h4>
+            <h4 className="font-bold mb-4">Ressourcen</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
-              <li><Link href="/store" className="hover:text-white">Store</Link></li>
+              <li><Link href="/store" className="hover:text-white">Shop</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-4">Legal</h4>
+            <h4 className="font-bold mb-4">Rechtliches</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
-              <li><Link href="/imprint" className="hover:text-white">Imprint</Link></li>
+              <li><Link href="/privacy" className="hover:text-white">Datenschutz</Link></li>
+              <li><Link href="/imprint" className="hover:text-white">Impressum</Link></li>
             </ul>
           </div>
         </div>
         <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs" suppressHydrationWarning>
-          © {new Date().getFullYear()} creavoid. All rights reserved.
+          © {new Date().getFullYear()} creavoid. Alle Rechte vorbehalten.
         </div>
       </footer>
     </div>
