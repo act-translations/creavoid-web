@@ -10,54 +10,106 @@ import { ServiceTabs } from "@/components/ServiceTabs";
 import { HeroAnimation } from "@/components/HeroAnimation";
 import { motion } from "framer-motion";
 
+// React Bits Components
+import { Hyperspeed, SpotlightCard } from "@appletosolutions/reactbits";
+
+// Custom Hyperspeed options - Dark theme for visible effect in header
+const hyperspeedOptions = {
+  distortion: "turbulentDistortion",
+  length: 400,
+  roadWidth: 9,
+  islandWidth: 2,
+  lanesPerRoad: 3,
+  fov: 90,
+  fovSpeedUp: 150,
+  speedUp: 2,
+  carLightsFade: 0.4,
+  totalSideLightSticks: 50,
+  lightPairsPerRoadWay: 50,
+  shoulderLinesWidthPercentage: 0.05,
+  brokenLinesWidthPercentage: 0.1,
+  brokenLinesLengthPercentage: 0.5,
+  lightStickWidth: [0.12, 0.5] as [number, number],
+  lightStickHeight: [1.3, 1.7] as [number, number],
+  movingAwaySpeed: [60, 80] as [number, number],
+  movingCloserSpeed: [-120, -160] as [number, number],
+  carLightsLength: [400 * 0.03, 400 * 0.2] as [number, number],
+  carLightsRadius: [0.05, 0.14] as [number, number],
+  carWidthPercentage: [0.3, 0.5] as [number, number],
+  carShiftX: [-0.8, 0.8] as [number, number],
+  carFloorSeparation: [0, 5] as [number, number],
+  colors: {
+    roadColor: 0x080808,      // Dark road
+    islandColor: 0x0a0a0a,
+    background: 0x020617,     // Dark Slate/Black background
+    shoulderLines: 0x29a0b1,  // Teal
+    brokenLines: 0x29a0b1,    // Teal
+    leftCars: [0xff6b6b, 0x29a0b1, 0x4ecdc4],
+    rightCars: [0x29a0b1, 0xff6b6b, 0x4ecdc4],
+    sticks: 0x29a0b1,
+  },
+};
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col font-sans selection:bg-primary/30 selection:text-primary-foreground">
-      {/* Navbar */}
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 h-24 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/logo.svg"
-              alt="creavoid"
-              width={200}
-              height={60}
-              priority
-              className="h-12 w-auto"
-            />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-8">
-            <MegaMenu />
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <Link
-              href="/blog"
-              className="hidden md:inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/store"
-              className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm"
-            >
-              <ShoppingCart className="w-4 h-4 mr-2" />
-              Store
-            </Link>
-          </div>
+    <div className="min-h-screen flex flex-col font-sans selection:bg-primary/30 selection:text-primary-foreground bg-background">
+      {/* Sticky Header with Hyperspeed Background Effect */}
+      <header className="sticky top-0 z-[100] w-full shadow-lg h-24">
+        {/* Hyperspeed Background - Strictly Clipped to Header Height */}
+        <div
+          className="absolute inset-x-0 top-0 h-24 z-[-1] overflow-hidden bg-slate-950"
+          style={{ clipPath: 'inset(0 0 0 0)' }}
+        >
+          <Hyperspeed effectOptions={hyperspeedOptions} />
+          {/* Dark overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-black/30" />
         </div>
+
+        {/* Navbar - Glass effect over Hyperspeed */}
+        <nav className="relative z-50 w-full h-full bg-white/5 backdrop-blur-md border-b border-white/10">
+          <div className="container mx-auto px-4 h-full flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/logo.svg"
+                alt="creavoid"
+                width={200}
+                height={60}
+                priority
+                className="h-12 w-auto brightness-0 invert"
+              />
+            </Link>
+
+            <div className="hidden lg:flex items-center gap-8 text-white">
+              <MegaMenu />
+            </div>
+
+            <div className="flex items-center gap-4">
+              <Link
+                href="/blog"
+                className="hidden md:inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border-0"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/store"
+                className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/20 shadow-sm"
+              >
+                <ShoppingCart className="w-4 h-4 mr-2" />
+                Store
+              </Link>
+            </div>
+          </div>
+        </nav>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative flex-1 flex flex-col justify-center py-20 md:py-40 bg-background overflow-hidden">
-        {/* Background Decorative Gradients */}
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* Hero Section - Clean Light Mode */}
+      <section className="relative flex-1 flex flex-col justify-center py-20 md:py-40 overflow-hidden bg-background">
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-background/90 via-background to-background" />
 
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -79,7 +131,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full text-lg font-medium transition-all h-16 px-10 border-2 border-border bg-transparent hover:bg-secondary hover:border-secondary"
+                className="inline-flex items-center justify-center rounded-full text-lg font-medium transition-all h-16 px-10 border-2 border-border bg-white/70 backdrop-blur-sm hover:bg-secondary hover:border-secondary"
               >
                 Our Services
               </Link>
@@ -103,97 +155,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feature Cards with Realistic Shadows */}
-      <section className="pt-24 pb-40 bg-white/50 relative z-20">
+      {/* Feature Cards with Spotlight Effect */}
+      <section className="pt-24 pb-40 bg-white/80 relative z-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-10 justify-items-center">
 
             {/* Card 1: Black - Web & SaaS */}
-            <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] bg-[#000000] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] group"
-              initial={{
-                y: 0,
-                boxShadow: "0px 20px 50px -12px rgba(0, 0, 0, 0.25)"
-              }}
-              whileHover={{
-                y: -12,
-                scale: 1.02,
-                boxShadow: "0px 40px 80px -15px rgba(0, 0, 0, 0.4)"
-              }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            <SpotlightCard
+              spotlightColor="rgba(41, 160, 177, 0.3)"
+              className="!bg-[#000000] !rounded-[2.5rem] !p-0 !min-h-[520px] !max-w-[380px] w-full"
             >
-              <div className="mb-10 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
-                <Terminal className="h-8 w-8 text-white" />
+              <div className="p-12 text-white flex flex-col min-h-[520px] group">
+                <div className="mb-10 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
+                  <Terminal className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
+                  Web & SaaS<br />Development
+                </h3>
+                <p className="text-gray-400 leading-relaxed text-lg font-light">
+                  Build scalable web applications and SaaS platforms that grow with your business. Our full-stack development team creates robust, user-friendly solutions that drive engagement.
+                </p>
+                <div className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
+                  Learn More <ArrowRight className="w-5 h-5" />
+                </div>
               </div>
-              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
-                Web & SaaS<br />Development
-              </h3>
-              <p className="text-gray-400 leading-relaxed text-lg font-light">
-                Build scalable web applications and SaaS platforms that grow with your business. Our full-stack development team creates robust, user-friendly solutions that drive engagement.
-              </p>
-              <div className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
-                Learn More <ArrowRight className="w-5 h-5" />
-              </div>
-            </motion.div>
+            </SpotlightCard>
 
             {/* Card 2: Gradient - AI Agents */}
-            <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] p-12 text-white flex flex-col min-h-[520px] max-w-[380px] group"
-              style={{
-                background: 'linear-gradient(300deg, #29A0B1 25%, #FF6B6B 100%)'
-              }}
-              initial={{
-                y: 0,
-                boxShadow: "0px 20px 50px -12px rgba(0, 0, 0, 0.25)"
-              }}
-              whileHover={{
-                y: -12,
-                scale: 1.02,
-                boxShadow: "0px 40px 80px -15px rgba(41, 160, 177, 0.35)"
-              }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            <SpotlightCard
+              spotlightColor="rgba(255, 107, 107, 0.3)"
+              className="gradient-card-bg !rounded-[2.5rem] !p-0 !min-h-[520px] !max-w-[380px] w-full"
             >
-              <div className="mb-10 w-16 h-16 rounded-2xl bg-[#000000]/10 flex items-center justify-center">
-                <Bot className="h-8 w-8 text-[#000000]" />
+              <div className="p-12 text-white flex flex-col min-h-[520px] group">
+                <div className="mb-10 w-16 h-16 rounded-2xl bg-black/10 flex items-center justify-center">
+                  <Bot className="h-8 w-8 text-black" />
+                </div>
+                <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
+                  AI Agents &<br />Automation
+                </h3>
+                <p className="text-black/80 leading-relaxed text-lg font-light">
+                  Streamline your operations with intelligent AI agents that handle customer support, lead qualification, and routine tasks 24/7. Reduce costs by up to 60%.
+                </p>
+                <div className="mt-auto pt-8 flex items-center gap-2 text-black font-bold group-hover:gap-4 transition-all">
+                  Learn More <ArrowRight className="w-5 h-5" />
+                </div>
               </div>
-              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
-                AI Agents &<br />Automation
-              </h3>
-              <p className="text-[#000000]/80 leading-relaxed text-lg font-light">
-                Streamline your operations with intelligent AI agents that handle customer support, lead qualification, and routine tasks 24/7. Reduce costs by up to 60%.
-              </p>
-              <div className="mt-auto pt-8 flex items-center gap-2 text-[#000000] font-bold group-hover:gap-4 transition-all">
-                Learn More <ArrowRight className="w-5 h-5" />
-              </div>
-            </motion.div>
+            </SpotlightCard>
 
             {/* Card 3: White - Paid Advertising */}
-            <motion.div
-              className="relative overflow-hidden rounded-[2.5rem] bg-white p-12 text-[#000000] flex flex-col min-h-[520px] max-w-[380px] group"
-              initial={{
-                y: 0,
-                boxShadow: "0px 20px 50px -12px rgba(0, 0, 0, 0.25)"
-              }}
-              whileHover={{
-                y: -12,
-                scale: 1.02,
-                boxShadow: "0px 40px 80px -15px rgba(0, 0, 0, 0.4)"
-              }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            <SpotlightCard
+              spotlightColor="rgba(41, 160, 177, 0.2)"
+              className="!bg-white !rounded-[2.5rem] !p-0 !min-h-[520px] !max-w-[380px] w-full border border-gray-100"
             >
-              <div className="mb-10 w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center">
-                <Megaphone className="h-8 w-8 text-primary" />
+              <div className="p-12 text-black flex flex-col min-h-[520px] group">
+                <div className="mb-10 w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center">
+                  <Megaphone className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
+                  Paid<br />Advertising
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-lg font-light">
+                  Generate qualified leads and maximize ROI with data-driven advertising campaigns across Google, Facebook, and LinkedIn. Performance marketing experts.
+                </p>
+                <div className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
+                  Learn More <ArrowRight className="w-5 h-5" />
+                </div>
               </div>
-              <h3 className="mb-6 text-4xl font-bold font-serif leading-tight">
-                Paid<br />Advertising
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-lg font-light">
-                Generate qualified leads and maximize ROI with data-driven advertising campaigns across Google, Facebook, and LinkedIn. Performance marketing experts.
-              </p>
-              <div className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">
-                Learn More <ArrowRight className="w-5 h-5" />
-              </div>
-            </motion.div>
+            </SpotlightCard>
 
           </div>
         </div>

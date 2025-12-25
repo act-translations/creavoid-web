@@ -28,7 +28,7 @@ export function MegaMenu() {
 
                 {/* 1. AI & Automation Services */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">AI & Automation</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">AI & Automation</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
                             <li className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
@@ -56,7 +56,7 @@ export function MegaMenu() {
 
                 {/* 2. Digital Marketing */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">Digital Marketing</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">Digital Marketing</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
                             <li className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
@@ -87,7 +87,7 @@ export function MegaMenu() {
 
                 {/* 3. Development */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">Development</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">Development</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
@@ -109,7 +109,7 @@ export function MegaMenu() {
 
                 {/* 4. Consultation */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">Consulting</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">Consulting</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
@@ -128,7 +128,7 @@ export function MegaMenu() {
 
                 {/* 5. Analytics */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent">Analytics</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">Analytics</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
