@@ -10,118 +10,69 @@ import { ServiceTabs } from "@/components/ServiceTabs";
 import { HeroAnimation } from "@/components/HeroAnimation";
 import { motion } from "framer-motion";
 
-// React Bits Components
-import { Hyperspeed } from "@appletosolutions/reactbits";
-import GlassSurface from "@/components/ui/GlassSurface";
-
-// Custom Hyperspeed options - Dark theme for visible effect in header
-const hyperspeedOptions = {
-  distortion: "turbulentDistortion",
-  length: 400,
-  roadWidth: 9,
-  islandWidth: 2,
-  lanesPerRoad: 3,
-  fov: 90,
-  fovSpeedUp: 150,
-  speedUp: 2,
-  carLightsFade: 0.4,
-  totalSideLightSticks: 50,
-  lightPairsPerRoadWay: 50,
-  shoulderLinesWidthPercentage: 0.05,
-  brokenLinesWidthPercentage: 0.1,
-  brokenLinesLengthPercentage: 0.5,
-  lightStickWidth: [0.12, 0.5] as [number, number],
-  lightStickHeight: [1.3, 1.7] as [number, number],
-  movingAwaySpeed: [60, 80] as [number, number],
-  movingCloserSpeed: [-120, -160] as [number, number],
-  carLightsLength: [400 * 0.03, 400 * 0.2] as [number, number],
-  carLightsRadius: [0.05, 0.14] as [number, number],
-  carWidthPercentage: [0.3, 0.5] as [number, number],
-  carShiftX: [-0.8, 0.8] as [number, number],
-  carFloorSeparation: [0, 5] as [number, number],
-  colors: {
-    roadColor: 0x080808,      // Dark road
-    islandColor: 0x0a0a0a,
-    background: 0x020617,     // Dark Slate/Black background
-    shoulderLines: 0x29a0b1,  // Teal
-    brokenLines: 0x29a0b1,    // Teal
-    leftCars: [0xff6b6b, 0x29a0b1, 0x4ecdc4],
-    rightCars: [0x29a0b1, 0xff6b6b, 0x4ecdc4],
-    sticks: 0x29a0b1,
-  },
-};
+// React Bits and Animations
+import Aurora from "@/components/ui/animations/Aurora";
+import DecryptedText from "@/components/ui/animations/DecryptedText";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans selection:bg-primary/30 selection:text-primary-foreground bg-background">
-      {/* Sticky Header with Glass Surface Refraction effect */}
-      <header className="sticky top-0 z-[100] w-full h-24">
-        <GlassSurface
-          className="w-full h-full"
-          borderRadius={0}
-          borderWidth={0}
-          brightness={70}
-          opacity={0.6}
-          blur={8}
-          displace={0.3}
-          backgroundOpacity={0.02}
-          saturation={1}
-          distortionScale={-8}
-          redOffset={0}
-          greenOffset={2}
-          blueOffset={4}
-        >
-          <nav className="w-full h-full">
-            <div className="container mx-auto px-4 h-full flex items-center justify-between">
-              <Link href="/" className="flex items-center gap-2 group">
-                <Image
-                  src="/logo.svg"
-                  alt="creavoid"
-                  width={200}
-                  height={60}
-                  priority
-                  className="h-10 w-auto transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
-                />
-              </Link>
+      {/* Fixed Header for true overlap/glass effect */}
+      <header className="fixed top-0 z-[100] w-full h-20 border-b border-white/5 bg-slate-950/20 backdrop-blur-md transition-all duration-300">
+        <nav className="w-full h-full">
+          <div className="container mx-auto px-4 h-full flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-2 group">
+              <Image
+                src="/logo.svg"
+                alt="creavoid"
+                width={200}
+                height={60}
+                priority
+                className="h-9 w-auto transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
+              />
+            </Link>
 
-              <div className="hidden lg:flex items-center gap-8 text-white">
-                <MegaMenu />
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Link
-                  href="/blog"
-                  className="hidden md:inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border-0"
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/store"
-                  className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/20 shadow-sm"
-                >
-                  <ShoppingCart className="w-4 h-4 mr-2" />
-                  Store
-                </Link>
-              </div>
+            <div className="hidden lg:flex items-center gap-8 text-white/90">
+              <MegaMenu />
             </div>
-          </nav>
-        </GlassSurface>
+
+            <div className="flex items-center gap-4">
+              <Link
+                href="/blog"
+                className="hidden md:inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border-0"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/store"
+                className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-white/5 text-white hover:bg-white/10 backdrop-blur-sm border border-white/10 shadow-sm"
+              >
+                <ShoppingCart className="w-4 h-4 mr-2" />
+                Store
+              </Link>
+            </div>
+          </div>
+        </nav>
       </header>
 
 
 
-      {/* Hero Section - Hyperspeed Background */}
-      < section className="relative flex-1 min-h-[85vh] flex flex-col justify-center py-20 md:py-32 overflow-hidden bg-slate-950 text-white" >
-        {/* Hyperspeed Background Effect */}
-        < div className="absolute inset-0 z-0" >
-          <Hyperspeed effectOptions={hyperspeedOptions} />
-          {/* Dark gradient overlay for content readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-[1]" />
-        </div >
+      {/* Hero Section - Aurora Background */}
+      <section className="relative flex-1 min-h-[100vh] flex flex-col justify-center py-20 md:py-32 overflow-hidden bg-slate-950 text-white">
+        {/* Aurora Background Effect */}
+        <div className="absolute inset-0 z-0 opacity-60">
+          <Aurora
+            colorStops={["#29a0b1", "#020617", "#4ecdc4"]}
+            speed={0.5}
+            amplitude={1.2}
+          />
+          {/* Subtle gradient overlay to ensure text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/0 via-slate-950/50 to-slate-950 z-[1]" />
+        </div>
 
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10 pt-20">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary-foreground text-xs font-bold tracking-wider uppercase backdrop-blur-md border border-primary/30">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary-foreground text-xs font-bold tracking-wider uppercase backdrop-blur-md border border-primary/20">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -129,7 +80,21 @@ export default function Home() {
               Next-Gen Business Solutions
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight font-serif leading-[1.1]">
-              Level up your business with <span className="text-primary italic">AI-driven</span> technology.
+              Level up your business with{' '}
+              <br className="hidden md:block" />
+              <span className="text-primary italic inline-block min-w-[200px]">
+                <DecryptedText
+                  text="AI-driven"
+                  animateOn="view"
+                  revealDirection="start"
+                  sequential={true}
+                  speed={80}
+                  maxIterations={15}
+                  className="text-primary italic"
+                  encryptedClassName="text-primary/30"
+                />
+              </span>{' '}
+              technology.
             </h1>
             <p className="text-xl text-slate-300 max-w-xl leading-relaxed">
               We transform businesses through custom software, intelligent AI agents, and performance marketing at the highest level.
@@ -143,7 +108,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full text-lg font-medium transition-all h-16 px-10 border-2 border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/20"
+                className="inline-flex items-center justify-center rounded-full text-lg font-medium transition-all h-16 px-10 border-2 border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10"
               >
                 Our Services
               </Link>
@@ -165,7 +130,7 @@ export default function Home() {
             <HeroAnimation />
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Feature Cards */}
       < section className="pt-24 pb-40 bg-white/80 relative z-20" >

@@ -104,24 +104,33 @@ Build a state-of-the-art, modern corporate website for Creavoid using a **Headle
 
 ---
 
+### 2025-12-27 - Header & Hero Redesign
+- **UI Architecture**: Ersetzte das bisherige "GlassSurface" und "Hyperspeed" durch modernere Komponenten von React Bits.
+- **Aurora Background**: Implementierte den `Aurora` Background-Effekt für die Hero-Sektion, was dem Design eine hochwertigere, fließende Ästhetik verleiht.
+- **DecryptedText**: Implementierte die `DecryptedText` Animation für das Keyword "AI-driven" im Hero-Titel. Feinabstimmung auf `sequential` Modus für bessere Lesbarkeit.
+- **Header Refactoring**: Der Header wurde auf `fixed` umgestellt, um einen echten Layering-Effekt mit `backdrop-blur` über der Hero-Sektion zu erzielen. Dies löst das Problem des "unrealistischen Glaseffekts".
+- **Code Cleanup**: Entfernung der ungenutzten `GlassSurface` Komponente und zugehöriger CSS-Dateien.
+
+---
+
 ## Current Status
-**Session Date**: 2025-12-25
+**Session Date**: 2025-12-28
 
 ### Summary
-- ✅ **Documentation**: PRD created, development log updated
-- ✅ **Git & Vercel**: Fully functional with SSH
-- ✅ **19 Service Pages**: All live and functional
-- ✅ **Build**: Production stable on Vercel
+- ✅ **Hero Redesign**: Aurora Background & DecryptedText erfolgreich integriert.
+- ✅ **Header Fix**: Echtes Glass-Overlay durch `fixed` Positioning und `backdrop-blur`.
+- ✅ **Cleanup**: Veraltete Animations-Komponenten entfernt.
+- ⚠️ **Build Alert**: Build-Warnung in `graphql-request` (Blog-Bereich), beeinträchtigt aber nicht die Startseite.
 
 ---
 
 ## Next Steps
 
 ### Immediate
-- [ ] Implement Glass Surface effect for header/navigation
-- [ ] Test Aurora animation in hero section
-- [ ] Test Hyperspeed animation in hero section (separate from Aurora)
+- [x] Implement Glass Surface effect for header/navigation (Replaced with modern backdrop-blur over fixed header)
+- [x] Test Aurora animation in hero section
 - [ ] Evaluate Spotlight Card for feature cards in Light Mode
+- [ ] Investigate/Fix `graphql-request` build warning in Blog section
 
 ### Future Phases
 - [ ] Connect domain (creavoid.com) in Vercel
@@ -133,4 +142,4 @@ Build a state-of-the-art, modern corporate website for Creavoid using a **Headle
 
 ---
 
-*Last Updated: 2025-12-25*
+*Last Updated: 2025-12-28*
