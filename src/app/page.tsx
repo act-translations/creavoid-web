@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 
 // React Bits Components
 import { Hyperspeed, SpotlightCard } from "@appletosolutions/reactbits";
+import GlassSurface from "@/components/ui/GlassSurface";
 
 // Custom Hyperspeed options - Dark theme for visible effect in header
 const hyperspeedOptions = {
@@ -53,73 +54,82 @@ const hyperspeedOptions = {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans selection:bg-primary/30 selection:text-primary-foreground bg-background">
-      {/* Sticky Header with Hyperspeed Background Effect */}
-      <header className="sticky top-0 z-[100] w-full shadow-lg h-24">
-        {/* Hyperspeed Background - Strictly Clipped to Header Height */}
-        <div
-          className="absolute inset-x-0 top-0 h-24 z-[-1] overflow-hidden bg-slate-950"
-          style={{ clipPath: 'inset(0 0 0 0)' }}
+      {/* Sticky Header with Glass Surface Refraction effect */}
+      <header className="sticky top-0 z-[100] w-full h-24">
+        <GlassSurface
+          className="w-full h-full"
+          borderRadius={0}
+          borderWidth={0}
+          brightness={70}
+          opacity={0.6}
+          blur={8}
+          displace={0.3}
+          backgroundOpacity={0.02}
+          saturation={1}
+          distortionScale={-8}
+          redOffset={0}
+          greenOffset={2}
+          blueOffset={4}
         >
-          <Hyperspeed effectOptions={hyperspeedOptions} />
-          {/* Dark overlay to ensure text readability */}
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
-
-        {/* Navbar - Glass effect over Hyperspeed */}
-        <nav className="relative z-50 w-full h-full bg-white/5 backdrop-blur-md border-b border-white/10">
-          <div className="container mx-auto px-4 h-full flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo.svg"
-                alt="creavoid"
-                width={200}
-                height={60}
-                priority
-                className="h-12 w-auto brightness-0 invert"
-              />
-            </Link>
-
-            <div className="hidden lg:flex items-center gap-8 text-white">
-              <MegaMenu />
-            </div>
-
-            <div className="flex items-center gap-4">
-              <Link
-                href="/blog"
-                className="hidden md:inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border-0"
-              >
-                Blog
+          <nav className="w-full h-full">
+            <div className="container mx-auto px-4 h-full flex items-center justify-between">
+              <Link href="/" className="flex items-center gap-2 group">
+                <Image
+                  src="/logo.svg"
+                  alt="creavoid"
+                  width={200}
+                  height={60}
+                  priority
+                  className="h-10 w-auto transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
+                />
               </Link>
-              <Link
-                href="/store"
-                className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/20 shadow-sm"
-              >
-                <ShoppingCart className="w-4 h-4 mr-2" />
-                Store
-              </Link>
+
+              <div className="hidden lg:flex items-center gap-8 text-white/90 font-medium">
+                <MegaMenu />
+              </div>
+
+              <div className="flex items-center gap-4">
+                <Link
+                  href="/blog"
+                  className="hidden md:inline-flex items-center justify-center rounded-full text-sm font-semibold transition-all h-10 px-6 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md active:scale-95"
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/store"
+                  className="inline-flex items-center justify-center rounded-full text-sm font-semibold transition-all h-10 px-6 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/20 shadow-md active:scale-95"
+                >
+                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  Store
+                </Link>
+              </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </GlassSurface>
       </header>
 
-      {/* Hero Section - Clean Light Mode */}
-      <section className="relative flex-1 flex flex-col justify-center py-20 md:py-40 overflow-hidden bg-background">
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-background/90 via-background to-background" />
+      {/* Hero Section - Hyperspeed Background */}
+      <section className="relative flex-1 min-h-[85vh] flex flex-col justify-center py-20 md:py-32 overflow-hidden bg-slate-950 text-white">
+        {/* Hyperspeed Background Effect */}
+        <div className="absolute inset-0 z-0">
+          <Hyperspeed effectOptions={hyperspeedOptions} />
+          {/* Dark gradient overlay for content readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-[1]" />
+        </div>
 
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary-foreground text-xs font-bold tracking-wider uppercase backdrop-blur-md border border-primary/30">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               Next-Gen Business Solutions
             </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight font-serif leading-[1.1] text-foreground">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight font-serif leading-[1.1]">
               Level up your business with <span className="text-primary italic">AI-driven</span> technology.
             </h1>
-            <p className="text-xl text-muted-foreground max-w-xl leading-relaxed">
+            <p className="text-xl text-slate-300 max-w-xl leading-relaxed">
               We transform businesses through custom software, intelligent AI agents, and performance marketing at the highest level.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -131,12 +141,12 @@ export default function Home() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-full text-lg font-medium transition-all h-16 px-10 border-2 border-border bg-white/70 backdrop-blur-sm hover:bg-secondary hover:border-secondary"
+                className="inline-flex items-center justify-center rounded-full text-lg font-medium transition-all h-16 px-10 border-2 border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/20"
               >
                 Our Services
               </Link>
             </div>
-            <div className="flex items-center gap-6 pt-4 text-sm text-muted-foreground/60 font-medium">
+            <div className="flex items-center gap-6 pt-4 text-sm text-slate-400 font-medium">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-primary" /> 100% Custom
               </div>
@@ -149,7 +159,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <HeroAnimation />
           </div>
         </div>

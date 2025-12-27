@@ -28,12 +28,12 @@ export function MegaMenu() {
 
                 {/* 1. AI & Automation Services */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">AI & Automation</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-white/10 transition-colors">AI & Automation</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
                             <li className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <Bot className="w-5 h-5 text-primary" />
-                                <span className="font-bold text-lg font-serif">AI Solutions</span>
+                                <span className="font-bold text-lg font-serif text-slate-900">AI Solutions</span>
                             </li>
                             <ListItem title="AI Consulting" href="/services/ai-consulting">
                                 Strategy, Readiness Assessment, Use Cases.
@@ -56,12 +56,12 @@ export function MegaMenu() {
 
                 {/* 2. Digital Marketing */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">Digital Marketing</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-white/10 transition-colors">Digital Marketing</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl">
                             <li className="col-span-2 pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <Megaphone className="w-5 h-5 text-primary" />
-                                <span className="font-bold text-lg font-serif">Growth Marketing</span>
+                                <span className="font-bold text-lg font-serif text-slate-900">Growth Marketing</span>
                             </li>
                             <ListItem title="SEO" href="/services/seo">
                                 Technical, OnPage, High-Ranking Strategies.
@@ -87,12 +87,12 @@ export function MegaMenu() {
 
                 {/* 3. Development */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">Development</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-white/10 transition-colors">Development</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <Code2 className="w-5 h-5 text-primary" />
-                                <span className="font-bold text-lg font-serif">Engineering</span>
+                                <span className="font-bold text-lg font-serif text-slate-900">Engineering</span>
                             </li>
                             <ListItem title="Web Development" href="/services/web-development">
                                 Full-Stack, Frontend, Backend, E-Commerce.
@@ -109,12 +109,12 @@ export function MegaMenu() {
 
                 {/* 4. Consultation */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">Consulting</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-white/10 transition-colors">Consulting</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <Lightbulb className="w-5 h-5 text-primary" />
-                                <span className="font-bold text-lg font-serif">Strategy</span>
+                                <span className="font-bold text-lg font-serif text-slate-900">Strategy</span>
                             </li>
                             <ListItem title="Digital Strategy" href="/services/digital-strategy">
                                 Business Analysis, Transformation Maps.
@@ -128,12 +128,12 @@ export function MegaMenu() {
 
                 {/* 5. Analytics */}
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-white/80 hover:bg-white/10">Analytics</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-transparent text-white hover:text-primary hover:bg-white/10 transition-colors">Analytics</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[400px] bg-white rounded-xl shadow-xl">
                             <li className="pb-2 mb-2 border-b border-gray-100 flex items-center gap-2">
                                 <BarChart className="w-5 h-5 text-primary" />
-                                <span className="font-bold text-lg font-serif">Data & Insights</span>
+                                <span className="font-bold text-lg font-serif text-slate-900">Data & Insights</span>
                             </li>
                             <ListItem title="Web Analytics" href="/services/web-analytics">
                                 GA4, Dashboards, Conversion Tracking.
