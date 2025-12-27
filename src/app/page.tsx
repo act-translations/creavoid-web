@@ -11,7 +11,7 @@ import { HeroAnimation } from "@/components/HeroAnimation";
 import { motion } from "framer-motion";
 
 // React Bits Components
-import { Hyperspeed, SpotlightCard } from "@appletosolutions/reactbits";
+import { Hyperspeed } from "@appletosolutions/reactbits";
 import GlassSurface from "@/components/ui/GlassSurface";
 
 // Custom Hyperspeed options - Dark theme for visible effect in header
@@ -84,20 +84,20 @@ export default function Home() {
                 />
               </Link>
 
-              <div className="hidden lg:flex items-center gap-8 text-white/90 font-medium">
+              <div className="hidden lg:flex items-center gap-8 text-white">
                 <MegaMenu />
               </div>
 
               <div className="flex items-center gap-4">
                 <Link
                   href="/blog"
-                  className="hidden md:inline-flex items-center justify-center rounded-full text-sm font-semibold transition-all h-10 px-6 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md active:scale-95"
+                  className="hidden md:inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border-0"
                 >
                   Blog
                 </Link>
                 <Link
                   href="/store"
-                  className="inline-flex items-center justify-center rounded-full text-sm font-semibold transition-all h-10 px-6 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/20 shadow-md active:scale-95"
+                  className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors h-9 px-4 py-2 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/20 shadow-sm"
                 >
                   <ShoppingCart className="w-4 h-4 mr-2" />
                   Store
@@ -108,14 +108,16 @@ export default function Home() {
         </GlassSurface>
       </header>
 
+
+
       {/* Hero Section - Hyperspeed Background */}
-      <section className="relative flex-1 min-h-[85vh] flex flex-col justify-center py-20 md:py-32 overflow-hidden bg-slate-950 text-white">
+      < section className="relative flex-1 min-h-[85vh] flex flex-col justify-center py-20 md:py-32 overflow-hidden bg-slate-950 text-white" >
         {/* Hyperspeed Background Effect */}
-        <div className="absolute inset-0 z-0">
+        < div className="absolute inset-0 z-0" >
           <Hyperspeed effectOptions={hyperspeedOptions} />
           {/* Dark gradient overlay for content readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-[1]" />
-        </div>
+        </div >
 
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8">
@@ -163,19 +165,18 @@ export default function Home() {
             <HeroAnimation />
           </div>
         </div>
-      </section>
+      </section >
 
-      {/* Feature Cards with Spotlight Effect */}
-      <section className="pt-24 pb-40 bg-white/80 relative z-20">
+      {/* Feature Cards */}
+      < section className="pt-24 pb-40 bg-white/80 relative z-20" >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-3 gap-10 justify-items-center">
 
             {/* Card 1: Black - Web & SaaS */}
-            <SpotlightCard
-              spotlightColor="rgba(41, 160, 177, 0.3)"
-              className="!bg-[#000000] !rounded-[2.5rem] !p-0 !min-h-[520px] !max-w-[380px] w-full"
+            <div
+              className="bg-[#000000] rounded-[2.5rem] min-h-[520px] max-w-[380px] w-full overflow-hidden relative"
             >
-              <div className="p-12 text-white flex flex-col min-h-[520px] group">
+              <div className="p-12 text-white flex flex-col min-h-[520px] group relative z-10">
                 <div className="mb-10 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
                   <Terminal className="h-8 w-8 text-white" />
                 </div>
@@ -189,14 +190,13 @@ export default function Home() {
                   Learn More <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
-            </SpotlightCard>
+            </div>
 
             {/* Card 2: Gradient - AI Agents */}
-            <SpotlightCard
-              spotlightColor="rgba(255, 107, 107, 0.3)"
-              className="gradient-card-bg !rounded-[2.5rem] !p-0 !min-h-[520px] !max-w-[380px] w-full"
+            <div
+              className="gradient-card-bg rounded-[2.5rem] min-h-[520px] max-w-[380px] w-full overflow-hidden relative"
             >
-              <div className="p-12 text-white flex flex-col min-h-[520px] group">
+              <div className="p-12 text-white flex flex-col min-h-[520px] group relative z-10">
                 <div className="mb-10 w-16 h-16 rounded-2xl bg-black/10 flex items-center justify-center">
                   <Bot className="h-8 w-8 text-black" />
                 </div>
@@ -210,14 +210,13 @@ export default function Home() {
                   Learn More <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
-            </SpotlightCard>
+            </div>
 
             {/* Card 3: White - Paid Advertising */}
-            <SpotlightCard
-              spotlightColor="rgba(41, 160, 177, 0.2)"
-              className="!bg-white !rounded-[2.5rem] !p-0 !min-h-[520px] !max-w-[380px] w-full border border-gray-100"
+            <div
+              className="bg-white rounded-[2.5rem] min-h-[520px] max-w-[380px] w-full border border-gray-100 overflow-hidden relative"
             >
-              <div className="p-12 text-black flex flex-col min-h-[520px] group">
+              <div className="p-12 text-black flex flex-col min-h-[520px] group relative z-10">
                 <div className="mb-10 w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center">
                   <Megaphone className="h-8 w-8 text-primary" />
                 </div>
@@ -231,14 +230,14 @@ export default function Home() {
                   Learn More <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
-            </SpotlightCard>
+            </div>
 
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Detailed Services Section */}
-      <section className="py-24 bg-background relative overflow-hidden">
+      < section className="py-24 bg-background relative overflow-hidden" >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10">
@@ -251,10 +250,10 @@ export default function Home() {
 
           <ServiceTabs />
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="bg-[#111827] text-white py-12 border-t border-gray-800">
+      < footer className="bg-[#111827] text-white py-12 border-t border-gray-800" >
         <div className="container mx-auto px-4 grid md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <div className="mb-4">
@@ -290,7 +289,7 @@ export default function Home() {
         <div className="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-xs" suppressHydrationWarning>
           © {new Date().getFullYear()} creavoid. All rights reserved.
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 }
